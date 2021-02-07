@@ -10,6 +10,7 @@ import { StoryContext } from "@storybook/react";
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { withPerformance } from "storybook-addon-performance";
+import theme from "../src/theme";
 
 /**
  * Add global context for RTL-LTR switching
@@ -48,14 +49,10 @@ const ColorModeToggleBar = () => {
 };
 
 const withChakra = (StoryFn: Function, context: StoryContext) => {
-  const { direction } = context.globals;
-  const dir = direction.toLowerCase();
   return (
-    <ChakraProvider theme={extendTheme({ direction: dir })}>
-      <div dir={dir} id="story-wrapper" style={{ minHeight: "100vh" }}>
-        <ColorModeToggleBar />
-        <StoryFn />
-      </div>
+    <ChakraProvider theme={theme}>
+      {/*<ColorModeToggleBar />*/}
+      <StoryFn />
     </ChakraProvider>
   );
 };

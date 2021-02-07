@@ -1,0 +1,63 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import Button from "./Button";
+import { HStack } from "@chakra-ui/react";
+import { MdBuild, MdCall } from "react-icons/md";
+
+<Meta title="Forms|Button" component={Button} />
+
+## Button
+
+For most cases, our default buttons with the standard defined colorschemes will suffice.
+
+<Preview>
+  <Story name="Default">
+    <HStack>
+      <Button colorScheme="blue">Blue Button</Button>
+      <Button colorScheme="orange">Orange Button</Button>
+      <Button disabled>Disabled</Button>
+    </HStack>
+  </Story>
+</Preview>
+
+## Custom colored Button
+
+It is also possible to drop the colorScheme prop, and define the custom colors through the `colors` property
+
+<Preview>
+  <Story name="Custom colored">
+    <Button colors={{ primary: "orange.100", secondary: "#4b8b3b" }}>
+      Custom Colored
+    </Button>
+  </Story>
+</Preview>
+
+## Button with icons
+
+If one would desire, it is possible to add a custom icon from [https://react-icons.github.io/react-icons/](react-icon)
+and add it to the button.
+
+<Preview>
+  <Story name="Button with icon">
+    <HStack>
+      <Button leftIcon={<MdBuild />}>Build</Button>
+      <Button colorScheme="orange" rightIcon={<MdCall />}>
+        Call
+      </Button>
+    </HStack>
+  </Story>
+</Preview>
+
+## Button with loading state
+
+The Button will show a spinner if you pass the `isLoading` prop to the Button. One can also define a `loadingText`
+
+<Preview>
+  <Story name="Loading button">
+    <HStack>
+      <Button isLoading>isLoading</Button>
+      <Button colorScheme="orange" isLoading loadingText="Loading...">
+        Loading
+      </Button>
+    </HStack>
+  </Story>
+</Preview>
