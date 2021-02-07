@@ -1,12 +1,11 @@
 import {
   ChakraProvider,
-  extendTheme,
   Flex,
   IconButton,
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { StoryContext } from "@storybook/react";
+import { addParameters, StoryContext } from "@storybook/react";
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { withPerformance } from "storybook-addon-performance";
@@ -58,3 +57,7 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
 };
 
 export const decorators = [withChakra, withPerformance];
+
+addParameters({
+  viewMode: "docs",
+});
