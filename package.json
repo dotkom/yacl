@@ -7,14 +7,12 @@
     "build"
   ],
   "types": "build/index.d.ts",
-  "description": "A skeleton to create your own React component library using Rollup, TypeScript, Sass and Storybook",
+  "description": "Some dumb React library with Rollup and Typescript",
   "scripts": {
     "build": "rollup -c",
-    "test": "jest",
-    "test:watch": "jest --watch",
     "storybook": "start-storybook -p 6006",
+    "start": "npm run storybook",
     "storybook:export": "build-storybook",
-    "generate": "node ./util/create-component",
     "prepublishOnly": "npm run build"
   },
   "repository": {
