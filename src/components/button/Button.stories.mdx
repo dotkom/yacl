@@ -19,15 +19,31 @@ For most cases, our default buttons with the standard defined colorschemes will 
   </Story>
 </Preview>
 
-## Custom colored Button
+## Button with custom color
 
-It is also possible to drop the colorScheme prop, and define the custom colors through the `colors` property
+It is also possible to drop the colorScheme prop, and define the custom colors through the `colors` property.
+You can chooes to pass in a hexcode, or one of the colors defined in our default theme.
 
 <Preview>
   <Story name="Custom colored">
     <Button colors={{ primary: "orange.100", secondary: "#4b8b3b" }}>
       Custom Colored
     </Button>
+  </Story>
+</Preview>
+
+## Button variants
+
+By default, the variant shown will be `solid`. However one can change this by setting the button variant to `outline`
+
+<Preview>
+  <Story name="Variants">
+    <HStack>
+      <Button variant="outline">Blue</Button>
+      <Button variant="outline" colorScheme="orange">
+        Orange
+      </Button>
+    </HStack>
   </Story>
 </Preview>
 
