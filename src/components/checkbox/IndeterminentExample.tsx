@@ -3,7 +3,7 @@ import React from "react";
 import Checkbox from "./Checkbox";
 
 const IndeterminateExample = () => {
-  const [checkedItems, setCheckedItems] = React.useState([false, false]);
+  const [checkedItems, setCheckedItems] = React.useState([false, true]);
 
   const allChecked = checkedItems.every(Boolean);
   const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
