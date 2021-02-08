@@ -1,0 +1,34 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import Checkbox from "./Checkbox";
+import IndeterminentExample from "./IndeterminentExample";
+import { Stack } from "@chakra-ui/react";
+
+<Meta title="Forms/Checkbox" component={Checkbox} />
+
+## Checkbox
+
+For most cases, our default buttons with the standard defined colorschemes will suffice.
+
+<Preview>
+  <Story name="Default">
+    <Stack>
+      <Checkbox>Checkbox</Checkbox>
+      <Checkbox defaultChecked>Default checked</Checkbox>
+      <Checkbox isDisabled>Disabled</Checkbox>
+      <Checkbox colorScheme="orange" isChecked={true}>
+        Checked Only and New Color
+      </Checkbox>
+      <Checkbox isInvalid isReadOnly>
+        Invalid and ReadOnly
+      </Checkbox>
+    </Stack>
+  </Story>
+</Preview>
+
+# Indeterminate
+
+<Preview>
+  <Story name="Indeterminate">
+    <IndeterminentExample />
+  </Story>
+</Preview>
