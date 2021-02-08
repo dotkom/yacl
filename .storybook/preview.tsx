@@ -8,7 +8,6 @@ import {
 import { addParameters, StoryContext } from "@storybook/react";
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { withPerformance } from "storybook-addon-performance";
 import theme from "../src/theme";
 
 /**
@@ -56,7 +55,7 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
   );
 };
 
-export const decorators = [withChakra, withPerformance];
+export const decorators = [withChakra];
 
 addParameters({
   viewMode: "docs",
