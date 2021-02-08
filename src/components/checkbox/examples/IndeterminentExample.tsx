@@ -1,6 +1,6 @@
 import { Stack } from "@chakra-ui/react";
 import React from "react";
-import Checkbox from "./Checkbox";
+import Checkbox from "../Checkbox";
 
 const IndeterminateExample = () => {
   const [checkedItems, setCheckedItems] = React.useState([false, true]);
