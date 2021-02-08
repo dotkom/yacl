@@ -21,14 +21,12 @@ For most cases, our default buttons with the standard defined colorschemes will 
 
 ## Button with custom color
 
-It is also possible to drop the colorScheme prop, and define the custom colors through the `colors` property.
+It is also possible to be more specific with the colors if you provide an array with two colors into the `colorScheme` prop instead.
 You can chooes to pass in a hexcode, or one of the colors defined in our default theme.
 
 <Preview>
   <Story name="Custom colored">
-    <Button colors={{ primary: "orange.100", secondary: "#4b8b3b" }}>
-      Custom Colored
-    </Button>
+    <Button colorScheme={["orange.200", "#4b8b3b"]}>Custom Colored</Button>
   </Story>
 </Preview>
 

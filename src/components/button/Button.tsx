@@ -4,36 +4,21 @@ import {
   ButtonOptions,
   HTMLChakraProps,
 } from "@chakra-ui/react";
+import { ColorScheme, getColorProps } from "../../common/colorscheme";
 
-type Colors = {
-  primary: string;
-  secondary: string;
-};
 export interface ButtonProps extends HTMLChakraProps<"button">, ButtonOptions {
-  colors?: Colors;
-  colorScheme?: string;
+  colorScheme?: ColorScheme;
   variant?: "solid" | "outline";
 }
 
 const Button: FC<ButtonProps> = ({
   children,
-  colorScheme = "blue",
-  colors,
+  colorScheme,
   ...props
-}: ButtonProps) => {
-  const colorProps = colors
-    ? { bg: colors.primary, color: colors.secondary }
-    : null;
-  return (
-    <ChakButton
-      borderRadius="5px"
-      colorScheme={!colors ? colorScheme : undefined}
-      {...colorProps}
-      {...props}
-    >
-      {children}
-    </ChakButton>
-  );
-};
+}: ButtonProps) => (
+  <ChakButton borderRadius="5px" {...getColorProps(colorScheme)} {...props}>
+    {children}
+  </ChakButton>
+);
 
 export default Button;
