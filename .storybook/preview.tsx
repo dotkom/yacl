@@ -9,6 +9,7 @@ import { addParameters, StoryContext } from "@storybook/react";
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import theme from "../src/theme";
+import Fonts from "../src/common/fonts";
 
 /**
  * Add global context for RTL-LTR switching
@@ -48,10 +49,13 @@ const ColorModeToggleBar = () => {
 
 const withChakra = (StoryFn: Function, context: StoryContext) => {
   return (
-    <ChakraProvider theme={theme}>
-      {/*<ColorModeToggleBar />*/}
-      <StoryFn />
-    </ChakraProvider>
+    <>
+      <Fonts />
+      <ChakraProvider theme={theme}>
+        {/*<ColorModeToggleBar />*/}
+        <StoryFn />
+      </ChakraProvider>
+    </>
   );
 };
 
