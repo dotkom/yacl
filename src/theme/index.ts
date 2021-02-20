@@ -1,6 +1,13 @@
 import { extendTheme } from "@chakra-ui/react";
+import ButtonStyle from "./components/button_styles";
 
 const theme = extendTheme({
+  shadows: {
+    outline: "0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.08)",
+  },
+  components: {
+    Button: ButtonStyle,
+  },
   colors: {
     orange: {
       50: "#FDE4C4",

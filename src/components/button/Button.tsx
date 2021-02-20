@@ -16,7 +16,7 @@ const Button: FC<ButtonProps> = ({
   colorScheme,
   ...props
 }: ButtonProps) => (
-  <ChakButton borderRadius="5px" {...getColorProps(colorScheme)} {...props}>
+  <ChakButton {...getColorProps(colorScheme)} {...props}>
     {children}
   </ChakButton>
 );
