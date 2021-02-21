@@ -1,0 +1,19 @@
+import { Meta, Story, Preview, ArgsTable } from "@storybook/addon-docs/blocks";
+import Radio from "./Radio";
+import { Stack } from "@chakra-ui/react";
+
+<Meta title="Forms/Radio" component={Radio} />
+
+## Radio
+
+For most cases, our default buttons with the standard defined colorschemes will suffice.
+
+<Preview>
+  <Story name="All">
+    <Stack>
+      <Radio>Hallo</Radio>
+    </Stack>
+  </Story>
+</Preview>
+
+<ArgsTable of={Radio} />
