@@ -6,7 +6,7 @@ import {
 
 export { BaseButtonProps as ButtonProps };
 
-export const Button = forwardRef<HTMLButtonElement, BaseButtonProps>(
+const Button = forwardRef<HTMLButtonElement, BaseButtonProps>(
   ({ colorScheme = "blue", ...props }, ref) => (
     <BaseButton colorScheme={colorScheme} {...props} ref={ref}>
       {props.children}

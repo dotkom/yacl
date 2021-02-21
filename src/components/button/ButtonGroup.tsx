@@ -6,7 +6,8 @@ import {
 
 export { BaseButtonGroupProps as ButtonGroupProps };
 
-export const ButtonGroup: FC<BaseButtonGroupProps> = ({
-  children,
-  ...props
-}) => <BaseButtonGroup {...props}>{children}</BaseButtonGroup>;
+const ButtonGroup: FC<BaseButtonGroupProps> = ({ children, ...props }) => (
+  <BaseButtonGroup {...props}>{children}</BaseButtonGroup>
+);
+
+export default ButtonGroup;

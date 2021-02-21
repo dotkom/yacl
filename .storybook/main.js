@@ -34,9 +34,11 @@ module.exports = {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) => {
         const isStyledSystemProp = excludedPropNames.includes(prop.name);
+        const isThemingProps =
+          prop.parent?.name.includes("ThemingProps") ?? false;
         const isHTMLElementProp =
           prop.parent?.fileName.includes("node_modules/@types/react") ?? false;
-        return !(isStyledSystemProp || isHTMLElementProp);
+        return !(isStyledSystemProp || isHTMLElementProp || isThemingProps);
       },
     },
   },

@@ -6,6 +6,8 @@ import {
 
 export { BaseIconButtonProps as IconButtonProps };
 
-export const IconButton: FC<BaseIconButtonProps> = ({ children, ...props }) => (
+const IconButton: FC<BaseIconButtonProps> = ({ children, ...props }) => (
   <BaseIconButton {...props}>{children}</BaseIconButton>
 );
+
+export default IconButton;
