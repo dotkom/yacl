@@ -1,20 +1,17 @@
-import React, { FC } from "react";
-import { Button as ChakButton, ButtonOptions } from "@chakra-ui/react";
-import { ColorScheme } from "../../common/colorscheme";
+import React, { forwardRef } from "react";
+import {
+  Button as BaseButton,
+  ButtonProps as BaseButtonProps,
+} from "@chakra-ui/react";
 
-export interface ButtonProps extends ButtonOptions {
-  colorScheme?: ColorScheme;
-  variant?: "solid" | "outline";
-}
+export { BaseButtonProps as ButtonProps };
 
-const Button: FC<ButtonProps> = ({
-  children,
-  colorScheme = "blue",
-  ...props
-}: ButtonProps) => (
-  <ChakButton colorScheme={colorScheme} {...props}>
-    {children}
-  </ChakButton>
+export const Button = forwardRef<HTMLButtonElement, BaseButtonProps>(
+  ({ colorScheme = "blue", ...props }, ref) => (
+    <BaseButton colorScheme={colorScheme} {...props} ref={ref}>
+      {props.children}
+    </BaseButton>
+  )
 );
 
 export default Button;

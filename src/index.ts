@@ -1,2 +1,2 @@
-export { default as Button } from "components/button/Button";
+export * from "components/button";
 export { default as Checkbox } from "components/checkbox/Checkbox";
