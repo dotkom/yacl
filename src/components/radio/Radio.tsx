@@ -1,17 +1,15 @@
 import React from "react";
 import {
-  Radio as ChakRadio,
+  Radio as BaseRadio,
+  RadioProps as BaseRadioProps,
   useColorMode,
-  UseRadioProps,
 } from "@chakra-ui/react";
 import { FC } from "react";
-import { ColorScheme, getPaletteWeight } from "../../common/colorscheme";
+import { getPaletteWeight } from "../../common/colorscheme";
 
-export interface RadioProps {
-  colorScheme?: ColorScheme;
-}
+export { BaseRadioProps as RadioProps };
 
-const Radio: FC<RadioProps & UseRadioProps> = ({
+const Radio: FC<BaseRadioProps> = ({
   colorScheme = "blue",
   children,
   ...props
@@ -19,14 +17,14 @@ const Radio: FC<RadioProps & UseRadioProps> = ({
   const { colorMode } = useColorMode();
   return (
     <>
-      <ChakRadio
+      <BaseRadio
         _hover={{
           borderColor: `${colorScheme}.${getPaletteWeight(colorMode)}`,
         }}
         {...props}
       >
         {children}
-      </ChakRadio>
+      </BaseRadio>
     </>
   );
 };
