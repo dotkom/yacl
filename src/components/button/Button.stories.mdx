@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+import { Meta, Story, Preview, ArgsTable } from "@storybook/addon-docs/blocks";
 import Button from "./Button";
 import { HStack } from "@chakra-ui/react";
 import { MdBuild, MdCall } from "react-icons/md";
@@ -75,3 +75,5 @@ The Button will show a spinner if you pass the `isLoading` prop to the Button. O
     </HStack>
   </Story>
 </Preview>
+
+<ArgsTable of={Button} />

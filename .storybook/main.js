@@ -1,5 +1,7 @@
+const { propNames } = require("@chakra-ui/styled-system");
 const path = require("path");
 const toPath = (_path) => path.join(process.cwd(), _path);
+const excludedPropNames = propNames.concat(["as", "apply", "sx", "__css"]);
 
 module.exports = {
   stories: [
@@ -12,9 +14,17 @@ module.exports = {
     "@storybook/addon-toolbars",
     "@storybook/addon-essentials",
     "@storybook/addon-docs",
+    "storybook-addon-react-docgen",
   ],
   typescript: {
-    reactDocgen: false,
+    reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => {
+        const isStyledSystemProp = excludedPropNames.includes(prop.name);
+        return !isStyledSystemProp;
+      },
+    },
   },
   webpackFinal: async (config) => {
     config.module.rules.push({

@@ -1,22 +1,18 @@
 import React, { FC } from "react";
-import {
-  Button as ChakButton,
-  ButtonOptions,
-  HTMLChakraProps,
-} from "@chakra-ui/react";
-import { ColorScheme, getColorProps } from "../../common/colorscheme";
+import { Button as ChakButton, ButtonOptions } from "@chakra-ui/react";
+import { ColorScheme } from "../../common/colorscheme";
 
-export interface ButtonProps extends HTMLChakraProps<"button">, ButtonOptions {
+export interface ButtonProps extends ButtonOptions {
   colorScheme?: ColorScheme;
   variant?: "solid" | "outline";
 }
 
 const Button: FC<ButtonProps> = ({
   children,
-  colorScheme,
+  colorScheme = "blue",
   ...props
 }: ButtonProps) => (
-  <ChakButton {...getColorProps(colorScheme)} {...props}>
+  <ChakButton colorScheme={colorScheme} {...props}>
     {children}
   </ChakButton>
 );
