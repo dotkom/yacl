@@ -1,6 +1,4 @@
-export type ColorScheme = string | [string, string] | undefined;
+export type ColorScheme = "blue" | "orange";
 
-export const getColorProps = (colors: ColorScheme = "blue") =>
-  Array.isArray(colors)
-    ? { bg: colors[0], color: colors[1] }
-    : { colorScheme: colors };
+export const getPaletteWeight = (colormode: "light" | "dark") =>
+  colormode == "light" ? 500 : 200;

@@ -1,12 +1,24 @@
 import React, { FC } from "react";
-import { Checkbox as ChakCheckbox, UseCheckboxProps } from "@chakra-ui/react";
+import {
+  Checkbox as ChakCheckbox,
+  UseCheckboxProps,
+  useColorMode,
+} from "@chakra-ui/react";
+import { ColorScheme, getPaletteWeight } from "../../common/colorscheme";
 
 interface CheckboxProps extends UseCheckboxProps {
-  colorScheme?: string;
+  colorScheme?: ColorScheme;
 }
 
-const Checkbox: FC<CheckboxProps> = ({ ...props }) => (
-  <ChakCheckbox {...props}></ChakCheckbox>
-);
+const Checkbox: FC<CheckboxProps> = ({ colorScheme = "blue", ...props }) => {
+  const { colorMode } = useColorMode();
+  return (
+    <ChakCheckbox
+      colorScheme={colorScheme}
+      _hover={{ borderColor: `${colorScheme}.${getPaletteWeight(colorMode)}` }}
+      {...props}
+    ></ChakCheckbox>
+  );
+};
 
 export default Checkbox;

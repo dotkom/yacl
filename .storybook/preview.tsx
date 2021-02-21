@@ -5,11 +5,12 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { addParameters, StoryContext } from "@storybook/react";
+import { addDecorator, addParameters, StoryContext } from "@storybook/react";
 import * as React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import theme from "../src/theme";
 import Fonts from "../src/common/fonts";
+import { withPropsTable } from "storybook-addon-react-docgen";
 
 /**
  * Add global context for RTL-LTR switching
@@ -64,3 +65,5 @@ export const decorators = [withChakra];
 addParameters({
   viewMode: "docs",
 });
+
+addDecorator(withPropsTable);
