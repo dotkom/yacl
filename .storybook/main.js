@@ -1,7 +1,19 @@
 const { propNames } = require("@chakra-ui/styled-system");
+
 const path = require("path");
 const toPath = (_path) => path.join(process.cwd(), _path);
-const excludedPropNames = propNames.concat(["as", "apply", "sx", "__css"]);
+const excludedPropNames = propNames.concat([
+  "as",
+  "apply",
+  "sx",
+  "__css",
+  "isTruncated",
+  "layerStyle",
+  "noOfLines",
+  "textStyle",
+  "orientation",
+  "styleConfig",
+]);
 
 module.exports = {
   stories: [
@@ -22,7 +34,9 @@ module.exports = {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) => {
         const isStyledSystemProp = excludedPropNames.includes(prop.name);
-        return !isStyledSystemProp;
+        const isHTMLElementProp =
+          prop.parent?.fileName.includes("node_modules/@types/react") ?? false;
+        return !(isStyledSystemProp || isHTMLElementProp);
       },
     },
   },
