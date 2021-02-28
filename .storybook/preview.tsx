@@ -6,7 +6,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { addDecorator, addParameters, StoryContext } from "@storybook/react";
-import * as React from "react";
+import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import theme from "../src/theme";
 import Fonts from "../src/common/fonts";
@@ -65,5 +65,3 @@ export const decorators = [withChakra];
 addParameters({
   viewMode: "docs",
 });
-
-addDecorator(withPropsTable);

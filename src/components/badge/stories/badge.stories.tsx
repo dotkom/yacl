@@ -11,6 +11,7 @@ export default {
       </Container>
     ),
   ],
+  component: Badge,
 };
 
 export const basic = () => <Badge>Default</Badge>;

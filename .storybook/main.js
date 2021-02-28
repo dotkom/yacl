@@ -13,6 +13,7 @@ const excludedPropNames = propNames.concat([
   "textStyle",
   "orientation",
   "styleConfig",
+  "css",
 ]);
 
 module.exports = {
