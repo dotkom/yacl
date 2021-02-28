@@ -1,0 +1,139 @@
+import React from "react";
+import { Container, Stack, HStack } from "@chakra-ui/layout";
+import { Checkbox, CheckboxGroup } from "../";
+
+export default {
+  title: "Checkbox",
+  decorators: [
+    (Story: any) => (
+      <Container mt="40px">
+        <Story />
+      </Container>
+    ),
+  ],
+  components: Checkbox,
+};
+
+export const basic = () => (
+  <Checkbox defaultChecked style={{ borderColor: "rgb(226, 232, 240)" }}>
+    Checkbox
+  </Checkbox>
+);
+
+export const disabled = () => (
+  <Stack spacing={10} direction="row">
+    <Checkbox isDisabled style={{ borderColor: "rgb(226, 232, 240)" }}>
+      Checkbox
+    </Checkbox>
+    <Checkbox
+      isDisabled
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+  </Stack>
+);
+
+export const withCustomColor = () => (
+  <Stack spacing={10} direction="row">
+    <Checkbox
+      colorScheme="red"
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+    <Checkbox
+      colorScheme="green"
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+  </Stack>
+);
+
+export const withSizes = () => (
+  <HStack spacing={10} direction="row">
+    <Checkbox
+      size="sm"
+      colorScheme="red"
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+    <Checkbox
+      size="md"
+      colorScheme="green"
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+    <Checkbox
+      size="lg"
+      colorScheme="orange"
+      defaultChecked
+      style={{ borderColor: "rgb(226, 232, 240)" }}
+    >
+      Checkbox
+    </Checkbox>
+  </HStack>
+);
+
+export const invalidCheckbox = () => (
+  <Checkbox isInvalid style={{ borderColor: "rgb(226, 232, 240)" }}>
+    Checkbox
+  </Checkbox>
+);
+
+export const IndeterminateExample = () => {
+  const [checkedItems, setCheckedItems] = React.useState([false, false]);
+
+  const allChecked = checkedItems.every(Boolean);
+  const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+
+  return (
+    <>
+      <Checkbox
+        style={{ borderColor: "rgb(226, 232, 240)" }}
+        isChecked={allChecked}
+        isIndeterminate={isIndeterminate}
+        onChange={(e) => setCheckedItems([e.target.checked, e.target.checked])}
+        children="Parent Checkbox"
+      />
+      <Stack pl={6} mt={1} spacing={1}>
+        <Checkbox
+          style={{ borderColor: "rgb(226, 232, 240)" }}
+          isChecked={checkedItems[0]}
+          onChange={(e) => setCheckedItems([e.target.checked, checkedItems[1]])}
+          children="Child Checkbox 1"
+        />
+        <Checkbox
+          style={{ borderColor: "rgb(226, 232, 240)" }}
+          isChecked={checkedItems[1]}
+          onChange={(e) => setCheckedItems([checkedItems[0], e.target.checked])}
+          children="Child Checkbox 2"
+        />
+      </Stack>
+    </>
+  );
+};
+
+export const checkboxGroup = () => (
+  <CheckboxGroup colorScheme="green" defaultValue={["cake", "muffin"]}>
+    <HStack>
+      <Checkbox value="cake" style={{ borderColor: "rgb(226, 232, 240)" }}>
+        Cake
+      </Checkbox>
+      <Checkbox value="muffin" style={{ borderColor: "rgb(226, 232, 240)" }}>
+        Muffin
+      </Checkbox>
+      <Checkbox value="icecream" style={{ borderColor: "rgb(226, 232, 240)" }}>
+        Icecream
+      </Checkbox>
+    </HStack>
+  </CheckboxGroup>
+);
