@@ -1,70 +1,76 @@
-import React from "react";
-import { Text, Stack, Radio, RadioGroup } from "@chakra-ui/react";
-import { Container } from "@chakra-ui/layout";
-import { Textarea } from "../";
+import { chakra } from "@chakra-ui/system"
+import * as React from "react"
+import { Textarea } from "../src"
 
 export default {
   title: "Textarea",
   decorators: [
-    (Story: any) => (
-      <Container mt="40px">
-        <Story />
-      </Container>
+    (story: Function) => (
+      <chakra.div maxW="500px" mt="40px" mx="auto">
+        {story()}
+      </chakra.div>
     ),
   ],
-  component: Textarea,
-};
+}
 
-export const basic = () => (
-  <Textarea placeholder="Here is a sample placeholder" />
-);
+export const basic = () => <Textarea defaultValue="This is a textarea" />
 
-export const disabledTextarea = () => (
-  <Textarea isDisabled placeholder="Here is a sample placeholder" />
-);
+export const rows = () => (
+  <Textarea defaultValue="This is a textarea" rows={12} />
+)
 
-export const invalidTextarea = () => (
-  <Textarea isInvalid placeholder="Here is a sample placeholder" />
-);
+export const disabled = () => (
+  <Textarea isDisabled placeholder="A disabled textarea" />
+)
 
-export const ControlledTextarea = () => {
-  let [value, setValue] = React.useState("");
+export const invalid = () => (
+  <Textarea isInvalid placeholder="An invalid textarea" />
+)
 
-  let handleInputChange = (e: any) => {
-    let inputValue = e.target.value;
-    setValue(inputValue);
-  };
+export const withSizes = () => (
+  <>
+    <Textarea
+      size="xs"
+      placeholder="A sample placeholder"
+      defaultValue="This is a x-small textarea"
+    />
+    <Textarea
+      size="sm"
+      placeholder="A sample placeholder"
+      defaultValue="This is a small textarea"
+    />
+    <Textarea
+      placeholder="A sample placeholder"
+      defaultValue="This is a default textarea"
+    />
+    <Textarea
+      size="lg"
+      placeholder="A sample placeholder"
+      defaultValue="This is a large textarea"
+    />
+  </>
+)
+
+export const Controlled = () => {
+  const [value, setValue] = React.useState("")
+
+  const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValue(e.target.value)
+  }
+
   return (
     <>
-      <Text mb="8px">Value: {value}</Text>
+      <p>Value: {value}</p>
       <Textarea
+        mt="8px"
         value={value}
-        onChange={handleInputChange}
-        placeholder="Here is a sample placeholder"
-        size="sm"
+        placeholder="Enter value"
+        onChange={onChange}
       />
     </>
-  );
-};
+  )
+}
 
-export const WithResize = () => {
-  const [resize, setResize] = React.useState("horizontal");
-
-  return (
-    <>
-      <RadioGroup defaultValue={resize} onChange={setResize} mb={6}>
-        <Stack direction="row" spacing={5}>
-          <Radio value="horizontal">Horizontal</Radio>
-          <Radio value="vertical">Vertical</Radio>
-          <Radio value="none">None</Radio>
-        </Stack>
-      </RadioGroup>
-
-      <Textarea
-        placeholder="Here is a sample placeholder"
-        size="sm"
-        resize={resize}
-      />
-    </>
-  );
-};
+export const withResize = () => (
+  <Textarea placeholder="Here is a sample placeholder" resize="horizontal" />
+)

@@ -1,34 +1,38 @@
+import { Button } from "@chakra-ui/button"
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu"
 import {
-  Button,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
   Popover,
   PopoverBody,
   PopoverContent,
   PopoverTrigger,
-  Tooltip,
-} from "@chakra-ui/react";
-
-import React from "react";
-
-import { Portal, PortalManager } from "../";
+} from "@chakra-ui/popover"
+import { Tooltip } from "@chakra-ui/tooltip"
+import * as React from "react"
+import Frame from "react-frame-component"
+import { Portal, PortalManager } from "../src"
 
 export default {
   title: "Portal",
-  component: Portal,
-};
+}
 
 export const BasicPortal = () => (
   <>
     <p>Welcome</p>
     <Portal>This text has been portaled</Portal>
   </>
-);
+)
+
+export const WithinIFrame = () => (
+  <Frame>
+    <PortalManager>
+      <h1>Welcome</h1>
+      <Portal>Welcome</Portal>
+    </PortalManager>
+  </Frame>
+)
 
 export const WithMountRef = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLDivElement>(null)
 
   return (
     <>
@@ -40,11 +44,11 @@ export const WithMountRef = () => {
         Portal Div
       </div>
     </>
-  );
-};
+  )
+}
 
 function Wrapper(props: any) {
-  const { offset, color, children } = props;
+  const { offset, color, children } = props
   return (
     <div
       style={{
@@ -62,7 +66,7 @@ function Wrapper(props: any) {
     >
       {children}
     </div>
-  );
+  )
 }
 
 export const NestedPortals = () => (
@@ -79,7 +83,7 @@ export const NestedPortals = () => (
       </Portal>
     </Portal>
   </Portal>
-);
+)
 
 export const WithZIndex = () => (
   <PortalManager zIndex={5}>
@@ -95,7 +99,7 @@ export const WithZIndex = () => (
       </Portal>
     </Menu>
   </PortalManager>
-);
+)
 
 export const WithZIndexPopover = () => (
   <PortalManager zIndex={20}>
@@ -110,7 +114,7 @@ export const WithZIndexPopover = () => (
       </Portal>
     </Popover>
   </PortalManager>
-);
+)
 
 export const WithZIndexTooltip = () => (
   <PortalManager zIndex={20}>
@@ -118,10 +122,10 @@ export const WithZIndexTooltip = () => (
       Tooltip
     </Tooltip>
   </PortalManager>
-);
+)
 
 export const WithCustomContainer = () => {
-  const ref = React.useRef<HTMLDivElement>(null);
+  const ref = React.useRef<HTMLDivElement>(null)
   return (
     <div>
       <Portal containerRef={ref}>
@@ -132,5 +136,5 @@ export const WithCustomContainer = () => {
       </Portal>
       <div style={{ background: "red" }} ref={ref} />
     </div>
-  );
-};
+  )
+}

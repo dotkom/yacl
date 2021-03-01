@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react"
 import {
   Table,
   TableCaption,
@@ -9,11 +9,11 @@ import {
   Th,
   Thead,
   Tr,
-} from "../";
+} from "../src"
 
 export default {
-  title: "Table Double Header",
-};
+  title: "Table / Double Header",
+}
 
 const DoubleHeaderTable = (props: TableProps) => (
   <Table {...props}>
@@ -102,22 +102,16 @@ const DoubleHeaderTable = (props: TableProps) => (
       </Tr>
     </Tfoot>
   </Table>
-);
+)
 
-export const simpleSM = () => <DoubleHeaderTable size="sm" />;
-export const simpleMD = () => <DoubleHeaderTable size="md" />;
-export const simpleLG = () => <DoubleHeaderTable size="lg" />;
+export const simpleSM = () => <DoubleHeaderTable size="sm" />
+export const simpleMD = () => <DoubleHeaderTable size="md" />
+export const simpleLG = () => <DoubleHeaderTable size="lg" />
 
-export const stripedSM = () => (
-  <DoubleHeaderTable variant="striped" size="sm" />
-);
-export const stripedMD = () => (
-  <DoubleHeaderTable variant="striped" size="md" />
-);
-export const stripedLG = () => (
-  <DoubleHeaderTable variant="striped" size="lg" />
-);
+export const stripedSM = () => <DoubleHeaderTable variant="striped" size="sm" />
+export const stripedMD = () => <DoubleHeaderTable variant="striped" size="md" />
+export const stripedLG = () => <DoubleHeaderTable variant="striped" size="lg" />
 
 export const unstyled = () => (
   <DoubleHeaderTable variant="unstyled" size="none" />
-);
+)

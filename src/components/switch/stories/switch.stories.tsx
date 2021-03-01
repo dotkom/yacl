@@ -1,8 +1,8 @@
-import { HStack } from "@chakra-ui/layout";
-import { FormControl, FormLabel } from "@chakra-ui/react";
-import { chakra } from "@chakra-ui/system";
-import React from "react";
-import { Switch } from "../";
+import { HStack } from "@chakra-ui/layout"
+import { chakra } from "@chakra-ui/system"
+import * as React from "react"
+import { useForm } from "react-hook-form"
+import { Switch } from "../src"
 
 export default {
   title: "Switch",
@@ -13,31 +13,30 @@ export default {
       </chakra.div>
     ),
   ],
-  component: Switch,
-};
+}
 
-export const Base = () => <Switch colorScheme="blue" />;
+export const Base = () => <Switch colorScheme="green" />
 
 export const Disabled = () => (
   <Switch isDisabled size="md" colorScheme="blue" margin="20px" />
-);
+)
 
 export const Readonly = () => (
   <Switch isReadOnly size="md" colorScheme="blue" margin="20px" />
-);
+)
 
 export const Invalid = () => (
   <Switch isInvalid size="md" colorScheme="blue" margin="20px" />
-);
+)
 
 export const Usage = () => (
-  <FormControl display="flex" alignItems="center">
-    <FormLabel htmlFor="email-alerts" mb="0">
+  <chakra.div display="flex" justifyContent="center" alignItems="center">
+    <chakra.label htmlFor="email-alerts" mr="16px">
       Enable email alerts?
-    </FormLabel>
-    <Switch id="email-alerts" />
-  </FormControl>
-);
+    </chakra.label>
+    <Switch colorScheme="green" id="email-alerts" />
+  </chakra.div>
+)
 
 export const Sizes = () => {
   return (
@@ -46,11 +45,11 @@ export const Sizes = () => {
       <Switch size="md" colorScheme="green" />
       <Switch size="lg" colorScheme="green" />
     </HStack>
-  );
-};
+  )
+}
 
 export const Controlled = () => {
-  const [checked, setChecked] = React.useState(true);
+  const [checked, setChecked] = React.useState(true)
 
   return (
     <>
@@ -61,26 +60,30 @@ export const Controlled = () => {
         onChange={(e) => setChecked(e.target.checked)}
       />
     </>
-  );
-};
+  )
+}
 
 export const WithReactHookForm = () => {
   const defaultValues = {
     name: "Hello",
     boolean: true,
     test: true,
-  };
+  }
+
+  const { handleSubmit, register } = useForm({
+    defaultValues,
+  })
 
   function onSubmit(values) {
-    alert(JSON.stringify(values, null, 2));
+    alert(JSON.stringify(values, null, 2))
   }
 
   return (
-    <form>
-      <input name="name" placeholder="name" />
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input name="name" placeholder="name" ref={register} />
       {/* <input type="checkbox" name="boolean" ref={register} /> */}
-      <Switch name="boolean" />
+      <Switch name="boolean" ref={register} />
       <button type="submit">Submit</button>
     </form>
-  );
-};
+  )
+}

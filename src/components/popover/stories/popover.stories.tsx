@@ -1,25 +1,48 @@
-import { Button, ButtonGroup, Input } from "@chakra-ui/react";
-import React from "react";
+import { Button, ButtonGroup } from "@chakra-ui/button"
+import { chakra } from "@chakra-ui/system"
+import * as React from "react"
 import {
   Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
   PopoverArrow,
+  PopoverBody,
   PopoverCloseButton,
-} from "../";
+  PopoverContent,
+  PopoverFooter,
+  PopoverHeader,
+  PopoverTrigger,
+  usePopover,
+} from "../src"
 
-export default {
-  title: "Popover Simple",
-  component: Popover,
-};
+export function PopoverExample() {
+  const { getTriggerProps, getPopoverProps, onClose } = usePopover()
+
+  return (
+    <>
+      <button type="button" {...getTriggerProps()}>
+        Open
+      </button>
+      <div
+        {...getPopoverProps({
+          style: {
+            background: "tomato",
+            color: "white",
+            padding: 30,
+          },
+        })}
+      >
+        This is the content <br />
+        <button type="button" onClick={onClose}>
+          Close
+        </button>
+      </div>
+    </>
+  )
+}
 
 export const simple = () => (
   <Popover placement="right-start">
     <PopoverTrigger>
-      <Button mt="180px">Trigger</Button>
+      <chakra.button mt="180px">Trigger</chakra.button>
     </PopoverTrigger>
     <PopoverContent>
       <PopoverArrow />
@@ -28,13 +51,13 @@ export const simple = () => (
       <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
     </PopoverContent>
   </Popover>
-);
+)
 
 export const basic = () => (
   <>
     <Popover placement="top">
       <PopoverTrigger>
-        <Button>Welcome home</Button>
+        <chakra.button>Welcome home</chakra.button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />
@@ -48,7 +71,7 @@ export const basic = () => (
 
     <Popover placement="bottom">
       <PopoverTrigger>
-        <Button>Welcome home</Button>
+        <chakra.button>Welcome home</chakra.button>
       </PopoverTrigger>
       <PopoverContent>
         <PopoverArrow />
@@ -61,14 +84,14 @@ export const basic = () => (
       </PopoverContent>
     </Popover>
 
-    <Input />
+    <chakra.input />
   </>
-);
+)
 
 export function ControlledUsage() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const open = () => setIsOpen(!isOpen);
-  const close = () => setIsOpen(false);
+  const [isOpen, setIsOpen] = React.useState(false)
+  const open = () => setIsOpen(!isOpen)
+  const close = () => setIsOpen(false)
   return (
     <>
       <Button mr={5} onClick={open}>
@@ -100,5 +123,5 @@ export function ControlledUsage() {
         </PopoverContent>
       </Popover>
     </>
-  );
+  )
 }

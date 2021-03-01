@@ -1,160 +1,161 @@
-import React from "react";
-import { Container, Stack, HStack, Box } from "@chakra-ui/layout";
-import { Radio, RadioGroup, useRadio, useRadioGroup } from "../";
+import * as React from "react"
+import { chakra } from "@chakra-ui/system"
+import { Stack, Wrap, SimpleGrid, Container, WrapItem } from "@chakra-ui/layout"
+import {
+  useRadio,
+  Radio,
+  useRadioGroup,
+  RadioGroup,
+  UseRadioProps,
+} from "../src"
 
 export default {
   title: "Radio",
-  decorators: [
-    (Story: any) => (
-      <Container mt="40px">
-        <Story />
-      </Container>
-    ),
-  ],
-  component: Radio,
-};
+  decorators: [(story: Function) => <Container mt="40px">{story()}</Container>],
+}
 
-export const Basic = () => {
-  const [value, setValue] = React.useState("1");
+export const Basic = () => <Radio>Hello</Radio>
+
+export const Disabled = () => <Radio isDisabled>Disabled</Radio>
+
+export const Readonly = () => (
+  <Radio mt="40px" isChecked isReadOnly size="lg" colorScheme="green">
+    I'm a readonly radio
+  </Radio>
+)
+
+export const WithSizes = () => {
+  const sizes = ["sm", "md", "lg"]
+
   return (
-    <RadioGroup onChange={setValue} value={value}>
-      <Stack direction="row">
-        <Radio value="1" style={{ borderColor: "rgb(226, 232, 240)" }}>
-          First
+    <>
+      {sizes.map((size) => (
+        <Radio
+          key={size}
+          size={size}
+          name="sample"
+          ml="1rem"
+          colorScheme="green"
+        >
+          Option
         </Radio>
-        <Radio value="2" style={{ borderColor: "rgb(226, 232, 240)" }}>
-          Second
-        </Radio>
-        <Radio value="3" style={{ borderColor: "rgb(226, 232, 240)" }}>
-          Third
-        </Radio>
+      ))}
+    </>
+  )
+}
+
+export const radioGroup = () => {
+  return (
+    <RadioGroup name="type" onChange={console.log}>
+      <Stack>
+        <Radio value="Option 1">Option 1</Radio>
+        <Radio value="Option 2">Option 2</Radio>
+        <Radio value="Option 3">Option 3</Radio>
       </Stack>
     </RadioGroup>
-  );
-};
+  )
+}
 
-export const withCustomColors = () => (
-  <RadioGroup defaultValue="2">
-    <Stack spacing={5} direction="row">
-      <Radio
-        colorScheme="red"
-        value="1"
-        style={{ borderColor: "rgb(226, 232, 240)" }}
-      >
-        Radio
-      </Radio>
-      <Radio
-        colorScheme="green"
-        value="2"
-        style={{ borderColor: "rgb(226, 232, 240)" }}
-      >
-        Radio
-      </Radio>
-    </Stack>
-  </RadioGroup>
-);
+export const GroupWithStack = () => {
+  return (
+    <RadioGroup defaultValue="Option 1" onChange={console.log}>
+      <Stack>
+        <Radio value="Option 1">Option 1</Radio>
+        <Radio value="Option 2">Option 2</Radio>
+        <Radio value="Option 3">Option 3</Radio>
+      </Stack>
+    </RadioGroup>
+  )
+}
 
-export const withSizes = () => (
-  <Stack>
-    <Radio
-      size="sm"
-      name="1"
-      colorScheme="red"
-      style={{ borderColor: "rgb(226, 232, 240)" }}
-    >
-      Radio
-    </Radio>
-    <Radio
-      size="md"
-      name="1"
-      colorScheme="green"
-      style={{ borderColor: "rgb(226, 232, 240)" }}
-    >
-      Radio
-    </Radio>
-    <Radio
-      size="lg"
-      name="1"
-      colorScheme="orange"
-      defaultChecked
-      style={{ borderColor: "rgb(226, 232, 240)" }}
-    >
-      Radio
-    </Radio>
-  </Stack>
-);
+export const GroupWithWrap = () => {
+  const range = Array.from(Array(10)).map((_, i) => i + 1)
+  return (
+    <RadioGroup onChange={console.log} defaultValue="Option 1">
+      <Wrap spacing={[2, 4, 6]}>
+        {range.map((num) => (
+          <WrapItem key={num}>
+            <Radio value={`Option ${num}`}>{`Option ${num}`}</Radio>
+          </WrapItem>
+        ))}
+      </Wrap>
+    </RadioGroup>
+  )
+}
 
-export const disabled = () => (
-  <RadioGroup defaultValue="1">
-    <Stack>
-      <Radio value="1" isDisabled style={{ borderColor: "rgb(226, 232, 240)" }}>
-        Default Checked
-      </Radio>
-      <Radio value="2" style={{ borderColor: "rgb(226, 232, 240)" }}>
-        R 2
-      </Radio>
-      <Radio value="3" style={{ borderColor: "rgb(226, 232, 240)" }}>
-        R 3
-      </Radio>
-    </Stack>
-  </RadioGroup>
-);
+export const GroupWithSimpleGrid = () => {
+  const range = Array.from(Array(10)).map((_, i) => i + 1)
+  return (
+    <RadioGroup onChange={console.log} defaultValue="Option 1">
+      <SimpleGrid columns={2} spacing={[2, 4, 6]}>
+        {range.map((num) => (
+          <Radio key={num} value={`Option ${num}`}>{`Option ${num}`}</Radio>
+        ))}
+      </SimpleGrid>
+    </RadioGroup>
+  )
+}
 
-export const invalid = () => <Radio isInvalid>Radio</Radio>;
+export const WithHook = () => {
+  const options = ["react", "vue", "svelte"]
 
-export const CustomRadio = () => {
-  const options = ["react", "vue", "svelte"];
-
-  const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "framework",
-    defaultValue: "react",
+  const { getRadioProps, getRootProps } = useRadioGroup({
+    name: "test",
+    defaultValue: "vue",
     onChange: console.log,
-  });
-
-  const group = getRootProps();
+  })
 
   return (
-    <HStack {...group}>
-      {options.map((value) => {
-        const radio = getRadioProps({ value });
-        return (
-          <RadioCard key={value} {...radio}>
-            {value}
-          </RadioCard>
-        );
-      })}
-    </HStack>
-  );
-};
+    <Stack spacing="20px" direction="row" {...getRootProps()}>
+      {options.map((value) => (
+        <Radio key={value} {...getRadioProps({ value })}>
+          {value}
+        </Radio>
+      ))}
+    </Stack>
+  )
+}
 
-function RadioCard(props: any) {
-  const { getInputProps, getCheckboxProps } = useRadio(props);
-
-  const input = getInputProps();
-  const checkbox = getCheckboxProps();
+/**
+ * Compose a custom RadioCard component using the `useRadio` hook.
+ */
+function RadioCard(props: UseRadioProps & { children?: React.ReactNode }) {
+  const { getInputProps, getCheckboxProps } = useRadio(props)
 
   return (
-    <Box as="label">
-      <input {...input} />
-      <Box
-        {...checkbox}
-        cursor="pointer"
-        borderWidth="1px"
-        borderRadius="md"
-        boxShadow="md"
-        _checked={{
-          bg: "teal.600",
-          color: "white",
-          borderColor: "teal.600",
-        }}
-        _focus={{
-          boxShadow: "outline",
-        }}
+    <chakra.label>
+      <input {...getInputProps()} />
+      <chakra.div
+        {...getCheckboxProps()}
+        display="inline-block"
+        border="1px solid gray"
+        _checked={{ bg: "tomato", color: "white" }}
+        _focus={{ outline: "3px dotted red" }}
         px={5}
         py={3}
       >
         {props.children}
-      </Box>
-    </Box>
-  );
+      </chakra.div>
+    </chakra.label>
+  )
+}
+
+export function CustomRadioCard() {
+  const options = ["react", "vue", "svelte"]
+
+  const { getRootProps, getRadioProps } = useRadioGroup({
+    name: "framework",
+    defaultValue: "vue",
+    onChange: console.log,
+  })
+
+  return (
+    <Stack direction="row" {...getRootProps()}>
+      {options.map((value) => (
+        <RadioCard key={value} {...getRadioProps({ value })}>
+          {value}
+        </RadioCard>
+      ))}
+    </Stack>
+  )
 }

@@ -1,75 +1,75 @@
-import { Container, Stack } from "@chakra-ui/layout";
-import React from "react";
-import { Progress } from "../";
+import { chakra } from "@chakra-ui/system"
+import { extendTheme, useTheme, ThemeProvider } from "@chakra-ui/react"
+import * as React from "react"
+import { Progress, ProgressLabel } from "../src"
 
 export default {
-  title: "Progress",
+  title: "Linear Progress",
   decorators: [
-    (Story: any) => (
-      <Container mt="40px">
-        <Story />
-      </Container>
+    (story: Function) => (
+      <chakra.div maxW="500px" mt="40px" mx="auto">
+        {story()}
+      </chakra.div>
     ),
   ],
-  component: Progress,
-};
+}
 
-export const basic = () => <Progress value={80} />;
+export const basic = () => <Progress value={50} />
 
-export const withStripes = () => (
-  <Stack spacing="24px">
-    <Progress value={20} hasStripe />
-    <Progress value={40} hasStripe />
-    <Progress value={60} hasStripe />
-    <Progress value={80} hasStripe />
-  </Stack>
-);
+export const withColorScheme = () => <Progress colorScheme="pink" value={20} />
 
-export const withColorScheme = () => (
-  <Stack>
-    <Progress value={20} hasStripe colorScheme="pink" />
-    <Progress value={40} hasStripe colorScheme="red" />
-    <Progress value={60} hasStripe colorScheme="purple" />
-    <Progress value={80} hasStripe colorScheme="yellow" />
-  </Stack>
-);
+export const indeterminate = () => (
+  <Progress margin="20px" colorScheme="cyan" size="xs" isIndeterminate />
+)
 
-export const WithDifferentSizes = () => (
-  <Stack spacing="24px">
-    <Progress color="green" size="sm" value={20} />
-    <Progress color="green" size="md" value={20} />
-    <Progress color="green" size="lg" value={20} />
-    <Progress color="green" height="32px" value={20} />
-  </Stack>
-);
+export const withLabel = () => (
+  <Progress value={60}>
+    <ProgressLabel>60%</ProgressLabel>
+  </Progress>
+)
 
-export const WithAnimation = () => {
-  const initialValues = {
-    first: 20,
-    second: 40,
-    third: 60,
-    fourth: 80,
-  };
+export const withStripe = () => (
+  <Progress colorScheme="green" hasStripe value={20} />
+)
 
-  const [values, setValues] = React.useState(initialValues);
+export const withSizes = () => (
+  <div>
+    <Progress colorScheme="green" size="sm" value={20} />
+    <br />
+    <Progress colorScheme="green" size="md" value={20} />
+    <br />
+    <Progress colorScheme="green" size="lg" value={20} />
+  </div>
+)
 
-  React.useEffect(() => {
-    setTimeout(() => {
-      setValues({
-        first: 40,
-        second: 60,
-        third: 80,
-        fourth: 100,
-      });
-    }, 500);
-  }, []);
+export const withAnimation = () => (
+  <Progress colorScheme="green" hasStripe isAnimated value={20} />
+)
+
+export const withCustomBorderRadius = () => (
+  <Progress value={20} borderRadius="4px" />
+)
+
+export const withThemeBorderRadiusOverride = () => {
+  const theme = useTheme()
+  const extendedTheme = extendTheme(
+    {
+      components: {
+        Progress: {
+          baseStyle: {
+            track: {
+              borderRadius: "md",
+            },
+          },
+        },
+      },
+    },
+    theme,
+  )
 
   return (
-    <Stack spacing="24px">
-      <Progress value={values.first} isAnimated />
-      <Progress value={values.second} isAnimated />
-      <Progress value={values.third} isAnimated />
-      <Progress value={values.fourth} isAnimated />
-    </Stack>
-  );
-};
+    <ThemeProvider theme={extendedTheme}>
+      <Progress value={50} />
+    </ThemeProvider>
+  )
+}
