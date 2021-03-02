@@ -5,27 +5,11 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import { addDecorator, addParameters, StoryContext } from "@storybook/react";
+import { addParameters, StoryContext } from "@storybook/react";
 import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import theme from "../src/theme";
 import Fonts from "../src/common/fonts";
-import { withPropsTable } from "storybook-addon-react-docgen";
-
-/**
- * Add global context for RTL-LTR switching
- */
-export const globalTypes = {
-  direction: {
-    name: "Direction",
-    description: "Direction for layout",
-    defaultValue: "LTR",
-    toolbar: {
-      icon: "globe",
-      items: ["LTR", "RTL"],
-    },
-  },
-};
 
 const ColorModeToggleBar = () => {
   const { toggleColorMode } = useColorMode();
@@ -53,7 +37,7 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
     <>
       <Fonts />
       <ChakraProvider theme={theme}>
-        {/*<ColorModeToggleBar />*/}
+        <ColorModeToggleBar />
         <StoryFn />
       </ChakraProvider>
     </>
@@ -63,5 +47,5 @@ const withChakra = (StoryFn: Function, context: StoryContext) => {
 export const decorators = [withChakra];
 
 addParameters({
-  viewMode: "docs",
+  viewMode: "canvas",
 });
