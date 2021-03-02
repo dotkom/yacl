@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useColorMode } from "@chakra-ui/react";
+import * as React from 'react';
+import { useColorMode } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Other/Color Mode",
+  title: 'Chakra/Other/Color Mode',
 };
 
 export const BasicExample = () => {

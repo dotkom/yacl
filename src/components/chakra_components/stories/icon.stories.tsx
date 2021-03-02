@@ -1,9 +1,9 @@
-import * as React from "react";
-import { Md3DRotation } from "react-icons/md";
-import { Icon, IconProps } from "@chakra-ui/react";
+import * as React from 'react';
+import { Md3DRotation } from 'react-icons/md';
+import { Icon, IconProps } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Icon",
+  title: 'Chakra/Components/Icon',
 };
 
 export const Basic = () => <Icon fontSize="24px" />;
@@ -19,6 +19,4 @@ const ArrowIcon = (props: IconProps) => (
 
 export const CustomIcon = () => <ArrowIcon boxSize="40px" color="red.100" />;
 
-export const UsingReactIcon = () => (
-  <Icon as={Md3DRotation} boxSize="40px" color="tomato" />
-);
+export const UsingReactIcon = () => <Icon as={Md3DRotation} boxSize="40px" color="tomato" />;

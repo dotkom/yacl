@@ -1,10 +1,10 @@
-import * as React from "react";
-import { Skeleton, SkeletonText, SkeletonCircle } from "@chakra-ui/react";
-import { chakra, DarkMode } from "@chakra-ui/system";
-import { Stack } from "@chakra-ui/layout";
+import * as React from 'react';
+import { Skeleton, SkeletonText, SkeletonCircle } from '@chakra-ui/react';
+import { chakra, DarkMode } from '@chakra-ui/system';
+import { Stack } from '@chakra-ui/layout';
 
 export default {
-  title: "Chakra/Components/Skeleton",
+  title: 'Chakra/Components/Skeleton',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="md" mt="40px" mx="auto">
@@ -20,12 +20,7 @@ export default {
 export const Basic = () => <Skeleton h="20px" />;
 
 export const Text = () => (
-  <SkeletonText
-    padding="20px"
-    borderWidth="1px"
-    borderRadius="lg"
-    noOfLines={[3, 4, 5, 6, 7]}
-  />
+  <SkeletonText padding="20px" borderWidth="1px" borderRadius="lg" noOfLines={[3, 4, 5, 6, 7]} />
 );
 
 export const AsContainer = () => (
@@ -119,9 +114,7 @@ export const WithIsLoaded = () => {
   );
 };
 
-export const WithCustomSpeed = () => (
-  <Skeleton boxSize="100px" speed={2.4} borderRadius="100px" />
-);
+export const WithCustomSpeed = () => <Skeleton boxSize="100px" speed={2.4} borderRadius="100px" />;
 
 export const WithDarkMode = () => (
   <DarkMode>

@@ -1,22 +1,14 @@
-import * as React from "react";
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverArrow,
-  PopoverBody,
-} from "@chakra-ui/react";
-import { Box, Text, Link } from "@chakra-ui/layout";
-import { IconButton } from "@chakra-ui/button";
-import { MdCheck } from "react-icons/md";
+import * as React from 'react';
+import { Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody } from '@chakra-ui/react';
+import { Box, Text, Link } from '@chakra-ui/layout';
+import { IconButton } from '@chakra-ui/button';
+import { MdCheck } from 'react-icons/md';
 
 function Card() {
   return (
     <Box p={5}>
       <Text fontWeight="bold">swyx</Text>
-      <Text mt={3}>
-        Infinite Builder working on DX @Netlify. Helping people #LearnInPublic
-      </Text>
+      <Text mt={3}>Infinite Builder working on DX @Netlify. Helping people #LearnInPublic</Text>
     </Box>
   );
 }
@@ -32,9 +24,9 @@ export function TwitterEx() {
 
       <PopoverContent
         sx={{
-          bg: "#15202b",
-          color: "white",
-          width: "400px",
+          bg: '#15202b',
+          color: 'white',
+          width: '400px',
         }}
       >
         <Card />

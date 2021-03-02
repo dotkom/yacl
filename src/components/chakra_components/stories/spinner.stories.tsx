@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Spinner } from "@chakra-ui/react";
+import * as React from 'react';
+import { Spinner } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Spinner",
+  title: 'Chakra/Components/Spinner',
 };
 
 /**
@@ -24,7 +24,7 @@ export const color = () => <Spinner color="red.500" />;
 
 export const size = () => (
   <div>
-    {["xl", "lg", "md", "sm", "xs"].map((size) => (
+    {['xl', 'lg', 'md', 'sm', 'xs'].map((size) => (
       <Spinner key={size} margin={3} color="green.500" size={size} />
     ))}
   </div>
@@ -34,15 +34,11 @@ export const size = () => (
  * Pass the `speed` prop to change the animation speed of the spinner.
  */
 
-export const speed = () => (
-  <Spinner color="blue.500" emptyColor="gray.200" speed="0.8s" />
-);
+export const speed = () => <Spinner color="blue.500" emptyColor="gray.200" speed="0.8s" />;
 
 /**
  * Pass the `emptyColor` prop to change the background color
  * of the empty area of the spinner.
  */
 
-export const emptyColor = () => (
-  <Spinner color="red.500" emptyColor="gray.200" />
-);
+export const emptyColor = () => <Spinner color="red.500" emptyColor="gray.200" />;

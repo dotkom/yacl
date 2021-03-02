@@ -1,6 +1,6 @@
-import { Button, ButtonGroup } from "@chakra-ui/button";
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
+import { Button, ButtonGroup } from '@chakra-ui/button';
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
 import {
   Popover,
   PopoverArrow,
@@ -11,7 +11,7 @@ import {
   PopoverHeader,
   PopoverTrigger,
   usePopover,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export function PopoverExample() {
   const { getTriggerProps, getPopoverProps, onClose } = usePopover();
@@ -24,8 +24,8 @@ export function PopoverExample() {
       <div
         {...getPopoverProps({
           style: {
-            background: "tomato",
-            color: "white",
+            background: 'tomato',
+            color: 'white',
             padding: 30,
           },
         })}
@@ -63,8 +63,8 @@ export const basic = () => (
         <PopoverArrow />
         <PopoverHeader>Submit now</PopoverHeader>
         <PopoverBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
         </PopoverBody>
       </PopoverContent>
     </Popover>
@@ -78,8 +78,8 @@ export const basic = () => (
         <PopoverCloseButton />
         <PopoverHeader>Submit now</PopoverHeader>
         <PopoverBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
         </PopoverBody>
       </PopoverContent>
     </Popover>
@@ -97,13 +97,7 @@ export function ControlledUsage() {
       <Button mr={5} onClick={open}>
         Trigger
       </Button>
-      <Popover
-        returnFocusOnClose={false}
-        isOpen={isOpen}
-        onClose={close}
-        placement="right"
-        closeOnBlur={false}
-      >
+      <Popover returnFocusOnClose={false} isOpen={isOpen} onClose={close} placement="right" closeOnBlur={false}>
         <PopoverTrigger>
           <Button colorScheme="pink">Popover Target</Button>
         </PopoverTrigger>
@@ -111,9 +105,7 @@ export function ControlledUsage() {
           <PopoverHeader fontWeight="semibold">Confirmation</PopoverHeader>
           <PopoverArrow />
           <PopoverCloseButton />
-          <PopoverBody>
-            Are you sure you want to continue with your action?
-          </PopoverBody>
+          <PopoverBody>Are you sure you want to continue with your action?</PopoverBody>
           <PopoverFooter d="flex" justifyContent="flex-end">
             <ButtonGroup size="sm">
               <Button variant="outline">Cancel</Button>

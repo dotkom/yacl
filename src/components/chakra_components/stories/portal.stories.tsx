@@ -1,18 +1,13 @@
-import { Button } from "@chakra-ui/button";
-import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
-import {
-  Popover,
-  PopoverBody,
-  PopoverContent,
-  PopoverTrigger,
-} from "@chakra-ui/popover";
-import { Tooltip } from "@chakra-ui/tooltip";
-import * as React from "react";
-import Frame from "react-frame-component";
-import { Portal, PortalManager } from "@chakra-ui/react";
+import { Button } from '@chakra-ui/button';
+import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu';
+import { Popover, PopoverBody, PopoverContent, PopoverTrigger } from '@chakra-ui/popover';
+import { Tooltip } from '@chakra-ui/tooltip';
+import * as React from 'react';
+import Frame from 'react-frame-component';
+import { Portal, PortalManager } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Other/Portal",
+  title: 'Chakra/Other/Portal',
 };
 
 export const BasicPortal = () => (
@@ -52,16 +47,16 @@ function Wrapper(props: any) {
   return (
     <div
       style={{
-        position: "fixed",
-        top: offset || "46%",
-        left: offset || "46%",
-        width: "200px",
-        paddingTop: "20px",
-        paddingBottom: "20px",
-        paddingLeft: "20px",
-        paddingRight: "20px",
+        position: 'fixed',
+        top: offset || '46%',
+        left: offset || '46%',
+        width: '200px',
+        paddingTop: '20px',
+        paddingBottom: '20px',
+        paddingLeft: '20px',
+        paddingRight: '20px',
         backgroundColor: color,
-        textAlign: "center",
+        textAlign: 'center',
       }}
     >
       {children}
@@ -134,7 +129,7 @@ export const WithCustomContainer = () => {
           <Portal>Testing my powers</Portal>
         </div>
       </Portal>
-      <div style={{ background: "red" }} ref={ref} />
+      <div style={{ background: 'red' }} ref={ref} />
     </div>
   );
 };

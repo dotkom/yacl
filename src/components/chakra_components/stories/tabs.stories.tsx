@@ -1,16 +1,9 @@
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import {
-  Tab,
-  TabIndicator,
-  TabList,
-  TabPanel,
-  TabPanels,
-  Tabs,
-} from "@chakra-ui/react";
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { Tab, TabIndicator, TabList, TabPanel, TabPanels, Tabs } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Tabs",
+  title: 'Chakra/Components/Tabs',
   decorators: [
     (story: Function) => (
       <chakra.div maxWidth="500px" mt="100px" mx="auto">
@@ -77,7 +70,7 @@ export const withIndicator = () => (
   <Tabs variant="unstyled" isManual>
     <TabList>
       <Tab>Settings</Tab>
-      <Tab _disabled={{ color: "gray.400" }} isDisabled>
+      <Tab _disabled={{ color: 'gray.400' }} isDisabled>
         Billings
       </Tab>
       <Tab>Preferences</Tab>

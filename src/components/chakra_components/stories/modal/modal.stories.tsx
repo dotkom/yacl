@@ -1,7 +1,7 @@
-import { useDisclosure } from "@chakra-ui/hooks";
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import Lorem from "react-lorem-component";
+import { useDisclosure } from '@chakra-ui/hooks';
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import Lorem from 'react-lorem-component';
 import {
   Modal,
   ModalBody,
@@ -10,12 +10,12 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-const Button = chakra("button", {
+const Button = chakra('button', {
   baseStyle: {
     outline: 0,
-    transition: "all 0.2s",
+    transition: 'all 0.2s',
   },
 });
 
@@ -30,9 +30,8 @@ export function BasicUsage() {
           <ModalCloseButton />
           <ModalHeader>Welcome Home</ModalHeader>
           <ModalBody>
-            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
-            ullamco deserunt aute id consequat veniam incididunt duis in sint
-            irure nisi.
+            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam
+            incididunt duis in sint irure nisi.
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Cancel</Button>
@@ -50,11 +49,7 @@ export function ReturnFocus() {
 
   return (
     <>
-      <chakra.div
-        ref={finalRef}
-        tabIndex={-1}
-        aria-label="Focus moved to this box"
-      >
+      <chakra.div ref={finalRef} tabIndex={-1} aria-label="Focus moved to this box">
         Some other content that'll receive focus on close.
       </chakra.div>
 
@@ -68,10 +63,9 @@ export function ReturnFocus() {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
-            ullamco deserunt aute id consequat veniam incididunt duis in sint
-            irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit
-            officia tempor esse quis.
+            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam
+            incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
+            esse quis.
           </ModalBody>
 
           <ModalFooter>
@@ -96,10 +90,9 @@ export function NestedModal() {
         <ModalContent>
           <ModalHeader>Modal Title</ModalHeader>
           <ModalBody>
-            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud
-            ullamco deserunt aute id consequat veniam incididunt duis in sint
-            irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit
-            officia tempor esse quis.
+            Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam
+            incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor
+            esse quis.
           </ModalBody>
           <ModalFooter>
             <chakra.div flex="1" />

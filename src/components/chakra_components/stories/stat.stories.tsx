@@ -1,15 +1,8 @@
-import * as React from "react";
-import {
-  Stat,
-  StatArrow,
-  StatGroup,
-  StatHelpText,
-  StatLabel,
-  StatNumber,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Stat",
+  title: 'Chakra/Components/Stat',
 };
 
 /**

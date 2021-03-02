@@ -1,9 +1,9 @@
-import * as React from "react";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { Text } from "@chakra-ui/react";
+import * as React from 'react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { Text } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Text",
+  title: 'Chakra/Components/Text',
 };
 
 const theme = extendTheme({
@@ -11,7 +11,7 @@ const theme = extendTheme({
     Text: {
       variants: {
         customCaps: {
-          textTransform: "uppercase",
+          textTransform: 'uppercase',
         },
       },
     },
@@ -21,9 +21,7 @@ const theme = extendTheme({
 // see https://github.com/chakra-ui/chakra-ui/issues/2464
 export const withVariant = () => (
   <ChakraProvider theme={theme}>
-    <Text variant="customCaps">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sapiente.
-    </Text>
+    <Text variant="customCaps">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, sapiente.</Text>
   </ChakraProvider>
 );
 

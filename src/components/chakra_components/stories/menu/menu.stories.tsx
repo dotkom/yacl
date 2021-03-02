@@ -1,15 +1,9 @@
-import { Button } from "@chakra-ui/button";
-import { Image } from "@chakra-ui/image";
-import { Portal } from "@chakra-ui/portal";
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import {
-  FaChevronDown,
-  FaSearch,
-  FaTruck,
-  FaUndoAlt,
-  FaUnlink,
-} from "react-icons/fa";
+import { Button } from '@chakra-ui/button';
+import { Image } from '@chakra-ui/image';
+import { Portal } from '@chakra-ui/portal';
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { FaChevronDown, FaSearch, FaTruck, FaUndoAlt, FaUnlink } from 'react-icons/fa';
 import {
   Menu,
   MenuButton,
@@ -19,15 +13,15 @@ import {
   MenuItemOption,
   MenuList,
   MenuOptionGroup,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 const words = [
-  "About Visual Studio Code",
-  "Check for updates",
-  "Preferences",
-  "Services",
-  "Hide Visual Studio Code",
-  "Show All",
+  'About Visual Studio Code',
+  'Check for updates',
+  'Preferences',
+  'Services',
+  'Hide Visual Studio Code',
+  'Show All',
 ];
 
 function logEvents(e: React.MouseEvent | React.KeyboardEvent | undefined) {
@@ -41,13 +35,7 @@ function logEvents(e: React.MouseEvent | React.KeyboardEvent | undefined) {
 export const Basic = () => (
   <div style={{ minHeight: 400, paddingTop: 500 }}>
     <Menu>
-      <MenuButton
-        as={Button}
-        variant="solid"
-        colorScheme="teal"
-        size="sm"
-        rightIcon={<FaUnlink />}
-      >
+      <MenuButton as={Button} variant="solid" colorScheme="teal" size="sm" rightIcon={<FaUnlink />}>
         Open Wakanda menu
       </MenuButton>
       <MenuList>
@@ -123,17 +111,17 @@ export const WithTogglableMenuItems = () => {
     }[]
   >([
     {
-      content: "Search",
+      content: 'Search',
       icon: <FaSearch />,
       isDisabled: true,
-      command: "⌥T",
+      command: '⌥T',
     },
     {
-      content: "Delivery",
+      content: 'Delivery',
       icon: <FaUndoAlt />,
     },
     {
-      content: "Unlink",
+      content: 'Unlink',
       icon: <FaUnlink />,
       isDisabled: true,
     },
@@ -145,17 +133,17 @@ export const WithTogglableMenuItems = () => {
         onClick={() => {
           return setItems([
             {
-              content: "Search",
+              content: 'Search',
               icon: <FaSearch />,
               isDisabled: false,
-              command: "⌥T",
+              command: '⌥T',
             },
             {
-              content: "Delivery",
+              content: 'Delivery',
               icon: <FaUndoAlt />,
             },
             {
-              content: "Unlink",
+              content: 'Unlink',
               icon: <FaUnlink />,
               isDisabled: true,
             },
@@ -170,12 +158,7 @@ export const WithTogglableMenuItems = () => {
         </MenuButton>
         <MenuList>
           {items.map(({ content, icon, isDisabled, command }, index) => (
-            <MenuItem
-              key={content}
-              isDisabled={isDisabled}
-              icon={icon}
-              command={command}
-            >
+            <MenuItem key={content} isDisabled={isDisabled} icon={icon} command={command}>
               {content}
             </MenuItem>
           ))}
@@ -250,12 +233,10 @@ export const WithInternalState = () => (
   <Menu>
     {({ isOpen }) => (
       <React.Fragment>
-        <MenuButton as={Button}>{isOpen ? "Close" : "Open"}</MenuButton>
+        <MenuButton as={Button}>{isOpen ? 'Close' : 'Open'}</MenuButton>
         <MenuList>
           <MenuItem>Download</MenuItem>
-          <MenuItem onClick={() => alert("Kagebunshin")}>
-            Create a Copy
-          </MenuItem>
+          <MenuItem onClick={() => alert('Kagebunshin')}>Create a Copy</MenuItem>
         </MenuList>
       </React.Fragment>
     )}
@@ -270,9 +251,9 @@ export const WithLetterNavigation = () => (
       transition="all 0.2s"
       borderRadius="md"
       borderWidth="1px"
-      _hover={{ bg: "gray.100" }}
-      _expanded={{ bg: "red.200" }}
-      _focus={{ outline: 0, boxShadow: "outline" }}
+      _hover={{ bg: 'gray.100' }}
+      _expanded={{ bg: 'red.200' }}
+      _focus={{ outline: 0, boxShadow: 'outline' }}
     >
       File <FaChevronDown />
     </MenuButton>
@@ -335,13 +316,7 @@ export const SplitButton = () => (
       Welcome
     </Button>
     <Menu placement="bottom-end" gutter={4}>
-      <MenuButton
-        as={Button}
-        variant="outline"
-        size="sm"
-        fontSize="xs"
-        borderLeftRadius="0"
-      >
+      <MenuButton as={Button} variant="outline" size="sm" fontSize="xs" borderLeftRadius="0">
         <FaChevronDown />
       </MenuButton>
       <MenuList minW="160px">

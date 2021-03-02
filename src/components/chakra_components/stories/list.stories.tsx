@@ -1,17 +1,9 @@
-import * as React from "react";
-import {
-  List,
-  ListItem,
-  Box,
-  Text,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-} from "@chakra-ui/react";
-import { FaCheck, FaPhone, FaAccessibleIcon } from "react-icons/fa";
+import * as React from 'react';
+import { List, ListItem, Box, Text, ListIcon, OrderedList, UnorderedList } from '@chakra-ui/react';
+import { FaCheck, FaPhone, FaAccessibleIcon } from 'react-icons/fa';
 
 export default {
-  title: "Chakra/Components/List",
+  title: 'Chakra/Components/List',
 };
 
 export const Default = () => (
@@ -20,30 +12,18 @@ export const Default = () => (
       .list-disc
     </Text>
     <UnorderedList spacing="2px">
-      <ListItem>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit
-      </ListItem>
-      <ListItem>
-        Assumenda, quia temporibus eveniet a libero incidunt suscipit
-      </ListItem>
-      <ListItem>
-        Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-      </ListItem>
+      <ListItem>Lorem ipsum dolor sit amet, consectetur adipisicing elit</ListItem>
+      <ListItem>Assumenda, quia temporibus eveniet a libero incidunt suscipit</ListItem>
+      <ListItem>Quidem, ipsam illum quis sed voluptatum quae eum fugit earum</ListItem>
     </UnorderedList>
   </Box>
 );
 
 export const Ordered = () => (
   <OrderedList>
-    <ListItem>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit
-    </ListItem>
-    <ListItem>
-      Assumenda, quia temporibus eveniet a libero incidunt suscipit
-    </ListItem>
-    <ListItem>
-      Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
-    </ListItem>
+    <ListItem>Lorem ipsum dolor sit amet, consectetur adipisicing elit</ListItem>
+    <ListItem>Assumenda, quia temporibus eveniet a libero incidunt suscipit</ListItem>
+    <ListItem>Quidem, ipsam illum quis sed voluptatum quae eum fugit earum</ListItem>
   </OrderedList>
 );
 

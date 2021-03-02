@@ -1,11 +1,5 @@
-import * as React from "react";
-import {
-  Modal,
-  ModalBody,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { Modal, ModalBody, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 
 export const InitialFocusRef = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -15,11 +9,7 @@ export const InitialFocusRef = () => {
       <button data-testid="button" onClick={() => setIsOpen(true)}>
         Open
       </button>
-      <Modal
-        isOpen={isOpen}
-        initialFocusRef={inputRef}
-        onClose={() => setIsOpen(false)}
-      >
+      <Modal isOpen={isOpen} initialFocusRef={inputRef} onClose={() => setIsOpen(false)}>
         <ModalOverlay>
           <ModalContent>
             <ModalHeader>Modal header</ModalHeader>

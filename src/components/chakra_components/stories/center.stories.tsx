@@ -1,9 +1,9 @@
-import * as React from "react";
-import { FaPhone } from "react-icons/fa";
-import { Box, Center } from "@chakra-ui/react";
+import * as React from 'react';
+import { FaPhone } from 'react-icons/fa';
+import { Box, Center } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Layout/Center",
+  title: 'Chakra/Layout/Center',
 };
 
 export const basic = () => (

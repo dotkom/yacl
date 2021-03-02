@@ -1,15 +1,9 @@
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import {
-  Slider,
-  SliderMark,
-  SliderThumb,
-  SliderTrack,
-  SliderFilledTrack,
-} from "@chakra-ui/react";
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { Slider, SliderMark, SliderThumb, SliderTrack, SliderFilledTrack } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/Slider",
+  title: 'Chakra/Forms/Slider',
   decorators: [
     (story: Function) => (
       <chakra.div maxWidth="400px" height="300px" mx="auto" mt="40px">

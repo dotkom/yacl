@@ -1,12 +1,12 @@
-import * as React from "react";
-import { useCounter } from "@chakra-ui/react";
+import * as React from 'react';
+import { useCounter } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Other/Counter",
+  title: 'Chakra/Other/Counter',
 };
 
 export function Basic() {
-  const [val, setVal] = React.useState<any>("8...4,.4");
+  const [val, setVal] = React.useState<any>('8...4,.4');
   const counter = useCounter({
     value: val,
     // defaultValue: "8...4,.4",
@@ -36,7 +36,7 @@ export function Basic() {
       <button onClick={() => counter.decrement()}>Decrement</button>
       <input
         value={counter.value}
-        style={{ background: "transparent" }}
+        style={{ background: 'transparent' }}
         onChange={(e) => counter.update(e.target.value)}
       />
     </div>

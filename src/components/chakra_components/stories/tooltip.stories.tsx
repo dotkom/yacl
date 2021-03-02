@@ -1,12 +1,12 @@
-import { Modal, ModalContent, ModalOverlay } from "@chakra-ui/modal";
-import { Portal } from "@chakra-ui/portal";
-import { chakra } from "@chakra-ui/system";
-import { AnimatePresence, motion } from "framer-motion";
-import * as React from "react";
-import { Tooltip, useTooltip } from "@chakra-ui/react";
+import { Modal, ModalContent, ModalOverlay } from '@chakra-ui/modal';
+import { Portal } from '@chakra-ui/portal';
+import { chakra } from '@chakra-ui/system';
+import { AnimatePresence, motion } from 'framer-motion';
+import * as React from 'react';
+import { Tooltip, useTooltip } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Tooltip",
+  title: 'Chakra/Components/Tooltip',
   decorators: [
     (story: Function) => (
       <chakra.div maxWidth="400px" mx="auto" mt="200px">
@@ -27,7 +27,7 @@ const HookTooltip = ({ children }: any) => {
   } = useTooltip({
     openDelay: 100,
     arrowSize: 8,
-    placement: "bottom",
+    placement: 'bottom',
   });
 
   return (
@@ -37,17 +37,17 @@ const HookTooltip = ({ children }: any) => {
         <div
           {...getTooltipProps({
             style: {
-              background: "tomato",
-              color: "white",
-              borderRadius: "4px",
-              padding: "0.5em 1em",
-              visibility: isOpen ? "visible" : "hidden",
+              background: 'tomato',
+              color: 'white',
+              borderRadius: '4px',
+              padding: '0.5em 1em',
+              visibility: isOpen ? 'visible' : 'hidden',
             },
           })}
         >
           {children}
           <div {...getArrowWrapperProps()}>
-            <div {...getArrowProps({ style: { background: "tomato" } })} />
+            <div {...getArrowProps({ style: { background: 'tomato' } })} />
           </div>
         </div>
       </div>
@@ -84,12 +84,7 @@ export const WithTransition = () => {
         {isOpen && (
           <Portal>
             <div {...getTooltipPositionerProps()}>
-              <motion.div
-                initial="exit"
-                animate="enter"
-                exit="exit"
-                {...(getTooltipProps() as any)}
-              >
+              <motion.div initial="exit" animate="enter" exit="exit" {...(getTooltipProps() as any)}>
                 <motion.div
                   transition={{
                     duration: 0.12,
@@ -102,17 +97,15 @@ export const WithTransition = () => {
                   }}
                   style={{
                     transformOrigin,
-                    background: "tomato",
-                    color: "white",
-                    borderRadius: "4px",
-                    padding: "0.5em 1em",
+                    background: 'tomato',
+                    color: 'white',
+                    borderRadius: '4px',
+                    padding: '0.5em 1em',
                   }}
                 >
                   Fade! This is tooltip
                   <div {...getArrowWrapperProps()}>
-                    <div
-                      {...getArrowProps({ style: { background: "tomato" } })}
-                    />
+                    <div {...getArrowProps({ style: { background: 'tomato' } })} />
                   </div>
                 </motion.div>
               </motion.div>
@@ -130,18 +123,10 @@ export const withButton = () => (
   </Tooltip>
 );
 
-export const withString = () => (
-  <Tooltip label="This is a chakra tooltip">Hover me</Tooltip>
-);
+export const withString = () => <Tooltip label="This is a chakra tooltip">Hover me</Tooltip>;
 
 export const withAriaLabel = () => (
-  <Tooltip
-    hasArrow
-    bg="tomato"
-    color="white"
-    label="Notifications"
-    aria-label="3 Notifications"
-  >
+  <Tooltip hasArrow bg="tomato" color="white" label="Notifications" aria-label="3 Notifications">
     <button style={{ fontSize: 25 }}>
       <span role="img" aria-label="notification">
         🔔
@@ -154,10 +139,10 @@ export const withAriaLabel = () => (
 export const issue607 = () => (
   <div
     style={{
-      position: "fixed",
-      background: "red",
-      height: "100px",
-      width: "200px",
+      position: 'fixed',
+      background: 'red',
+      height: '100px',
+      width: '200px',
     }}
   >
     <Tooltip label="Hello" aria-label="hello">
@@ -192,7 +177,7 @@ export const WithModal = () => {
               </button>
             </Tooltip>
 
-            <div style={{ float: "right" }}>
+            <div style={{ float: 'right' }}>
               <Tooltip label="Notifications" aria-label="3 Notifications">
                 <button style={{ fontSize: 25 }}>
                   <span role="img" aria-label="Bell">
@@ -211,7 +196,7 @@ export const WithModal = () => {
 
 export const withDisabledButton = () => (
   <Tooltip label="Oh oh oh, oh oh">
-    <button style={{ fontSize: 25, pointerEvents: "all" }} disabled>
+    <button style={{ fontSize: 25, pointerEvents: 'all' }} disabled>
       Can't Touch This
     </button>
   </Tooltip>
@@ -219,7 +204,7 @@ export const withDisabledButton = () => (
 
 export const withWrappedDisabledButton = () => (
   <Tooltip label="Hello world" shouldWrapChildren>
-    <button style={{ fontSize: 25, pointerEvents: "all" }} disabled>
+    <button style={{ fontSize: 25, pointerEvents: 'all' }} disabled>
       Hover me
     </button>
   </Tooltip>
@@ -227,7 +212,7 @@ export const withWrappedDisabledButton = () => (
 
 export const withIsOpenProp = () => (
   <Tooltip label="Hello world" isOpen hasArrow>
-    <button style={{ fontSize: 25, pointerEvents: "all" }} disabled>
+    <button style={{ fontSize: 25, pointerEvents: 'all' }} disabled>
       Can't Touch This
     </button>
   </Tooltip>
@@ -235,8 +220,6 @@ export const withIsOpenProp = () => (
 
 export const withDefaultIsOpenProp = () => (
   <Tooltip label="Hello world" defaultIsOpen>
-    <button style={{ fontSize: 25, pointerEvents: "all" }}>
-      Can't Touch This
-    </button>
+    <button style={{ fontSize: 25, pointerEvents: 'all' }}>Can't Touch This</button>
   </Tooltip>
 );

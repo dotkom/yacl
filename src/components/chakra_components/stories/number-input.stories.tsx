@@ -1,16 +1,11 @@
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import Lorem from "react-lorem-component";
-import { Button } from "@chakra-ui/button";
-import { Input } from "@chakra-ui/input";
-import { Stack } from "@chakra-ui/layout";
-import { useForm } from "react-hook-form";
-import {
-  FormControl,
-  FormErrorMessage,
-  FormHelperText,
-  FormLabel,
-} from "@chakra-ui/form-control";
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import Lorem from 'react-lorem-component';
+import { Button } from '@chakra-ui/button';
+import { Input } from '@chakra-ui/input';
+import { Stack } from '@chakra-ui/layout';
+import { useForm } from 'react-hook-form';
+import { FormControl, FormErrorMessage, FormHelperText, FormLabel } from '@chakra-ui/form-control';
 import {
   NumberDecrementStepper,
   NumberIncrementStepper,
@@ -18,10 +13,10 @@ import {
   NumberInputField,
   NumberInputStepper,
   useNumberInput,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/NumberInput",
+  title: 'Chakra/Forms/NumberInput',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="400px" mt="40px" mx="auto">
@@ -32,12 +27,7 @@ export default {
 };
 
 export const HookUsage = () => {
-  const {
-    getInputProps,
-    getIncrementButtonProps,
-    getDecrementButtonProps,
-    valueAsNumber,
-  } = useNumberInput({
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps, valueAsNumber } = useNumberInput({
     step: 0.01,
     defaultValue: 1.53,
     min: 1,
@@ -61,17 +51,12 @@ export const HookUsage = () => {
 };
 
 const format = (val: string) => `$${val}`;
-const parse = (val: string) => val.replace(/^\$/, "");
+const parse = (val: string) => val.replace(/^\$/, '');
 
 export const HookWithFormatAndParse = () => {
-  const [value, setValue] = React.useState<string>("1.53");
+  const [value, setValue] = React.useState<string>('1.53');
 
-  const {
-    getInputProps,
-    getIncrementButtonProps,
-    getDecrementButtonProps,
-    valueAsNumber,
-  } = useNumberInput({
+  const { getInputProps, getIncrementButtonProps, getDecrementButtonProps, valueAsNumber } = useNumberInput({
     step: 0.01,
     value: format(value),
     min: 1,
@@ -143,12 +128,7 @@ export const withClampValueDisabled = () => (
 );
 
 export const allowOutOfRange = () => (
-  <NumberInput
-    defaultValue={15}
-    max={10}
-    keepWithinRange={false}
-    clampValueOnBlur={false}
-  >
+  <NumberInput defaultValue={15} max={10} keepWithinRange={false} clampValueOnBlur={false}>
     <NumberInputField />
     <NumberInputStepper>
       <NumberIncrementStepper />
@@ -159,7 +139,7 @@ export const allowOutOfRange = () => (
 
 export const inputSizes = () => (
   <Stack>
-    {["xs", "sm", "md", "lg"].map((size) => (
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
       <NumberInput key={size} size={size} defaultValue={15} min={10}>
         <NumberInputField />
         <NumberInputStepper>
@@ -194,17 +174,7 @@ export const WithReactHookForm = () => {
 };
 
 function FormError(props: any) {
-  return (
-    <FormErrorMessage
-      mt="0"
-      bg="red.500"
-      color="white"
-      px="1"
-      lineHeight="1em"
-      borderRadius="sm"
-      {...props}
-    />
-  );
+  return <FormErrorMessage mt="0" bg="red.500" color="white" px="1" lineHeight="1em" borderRadius="sm" {...props} />;
 }
 
 export const WithFormControl = () => {

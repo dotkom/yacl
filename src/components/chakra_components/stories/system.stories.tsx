@@ -1,17 +1,10 @@
-import React from "react";
-import theme from "@chakra-ui/theme";
-import { motion } from "framer-motion";
-import {
-  chakra,
-  PropsOf,
-  ThemeProvider,
-  ThemingProps,
-  useProps,
-  useStyleConfig,
-} from "@chakra-ui/react";
+import React from 'react';
+import theme from '@chakra-ui/theme';
+import { motion } from 'framer-motion';
+import { chakra, PropsOf, ThemeProvider, ThemingProps, useProps, useStyleConfig } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Other/System",
+  title: 'Chakra/Other/System',
 };
 
 const MotionBox = motion.custom(chakra.div);
@@ -26,25 +19,20 @@ export const WithFramerMotion = () => (
     animate={{
       scale: [1, 2, 2, 1, 1],
       rotate: [0, 0, 270, 270, 0],
-      borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+      borderRadius: ['20%', '20%', '50%', '50%', '20%'],
     }}
   />
 );
 
 export const ApplyProp = () => (
   <chakra.p>
-    This is a paragraph, but apply styles from{" "}
-    <chakra.code fontFamily="mono">styles.h1</chakra.code>
+    This is a paragraph, but apply styles from <chakra.code fontFamily="mono">styles.h1</chakra.code>
   </chakra.p>
 );
 
 export const withHeading = () => (
   <div>
-    <chakra.h1
-      fontSize={["50px", "80px", "100px"]}
-      color="tomato"
-      sx={{ color: "teal.500" }}
-    >
+    <chakra.h1 fontSize={['50px', '80px', '100px']} color="tomato" sx={{ color: 'teal.500' }}>
       Welcome
     </chakra.h1>
   </div>
@@ -56,16 +44,16 @@ export const withTextStyles = () => (
       ...theme,
       textStyles: {
         h1: {
-          fontSize: ["48px", "72px"],
-          fontWeight: "bold",
-          lineHeight: "110%",
-          letterSpacing: "-0.01em",
+          fontSize: ['48px', '72px'],
+          fontWeight: 'bold',
+          lineHeight: '110%',
+          letterSpacing: '-0.01em',
         },
         h2: {
-          fontSize: ["36px", "48px"],
-          fontWeight: "light",
-          lineHeight: "110%",
-          letterSpacing: "-0.01em",
+          fontSize: ['36px', '48px'],
+          fontWeight: 'light',
+          lineHeight: '110%',
+          letterSpacing: '-0.01em',
         },
       },
     }}
@@ -77,7 +65,7 @@ export const withTextStyles = () => (
 );
 
 const Comp = (props: PropsOf<typeof chakra.div> & ThemingProps) => {
-  const res = useProps("Badge", props);
+  const res = useProps('Badge', props);
   return <chakra.div {...res.props} __css={res.styles} />;
 };
 
@@ -88,7 +76,7 @@ export const WithUseProps = () => (
     color="white"
     textTransform="lowercase"
     onClick={() => {
-      console.log("welcome home");
+      console.log('welcome home');
     }}
   >
     Welcome home
@@ -97,17 +85,8 @@ export const WithUseProps = () => (
 
 export const WithGradient = () => (
   <>
-    <chakra.div
-      bgGradient="linear(to-r, pink.300, blue.500)"
-      w="500px"
-      h="64px"
-    />
-    <chakra.span
-      bgGradient="linear(to-r, red.200, papayawhip)"
-      bgClip="text"
-      fontSize="7xl"
-      fontWeight="extrabold"
-    >
+    <chakra.div bgGradient="linear(to-r, pink.300, blue.500)" w="500px" h="64px" />
+    <chakra.span bgGradient="linear(to-r, red.200, papayawhip)" bgClip="text" fontSize="7xl" fontWeight="extrabold">
       Welcome to Chakra UI
     </chakra.span>
   </>
@@ -115,11 +94,7 @@ export const WithGradient = () => (
 
 export const WithRgbGradient = () => (
   <>
-    <chakra.div
-      bgGradient="linear(to-r, rgb(0,0,0), rgb(230,230,230))"
-      w="500px"
-      h="64px"
-    />
+    <chakra.div bgGradient="linear(to-r, rgb(0,0,0), rgb(230,230,230))" w="500px" h="64px" />
   </>
 );
 
@@ -128,14 +103,14 @@ export const WithLayerStyle = () => (
     theme={{
       layerStyles: {
         base: {
-          bg: "pink",
-          color: "red",
+          bg: 'pink',
+          color: 'red',
         },
       },
       textStyles: {
         caps: {
-          textTransform: "uppercase",
-          fontWeight: "bold",
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
         },
       },
     }}
@@ -147,7 +122,7 @@ export const WithLayerStyle = () => (
 );
 
 const Div: React.FC = ({ children }) => {
-  const styles = useStyleConfig("Div");
+  const styles = useStyleConfig('Div');
   return <chakra.div sx={styles}>{children}</chakra.div>;
 };
 
@@ -156,15 +131,15 @@ export const WithLayerStyleInComponentTheme = () => (
     theme={{
       textStyles: {
         caps: {
-          textTransform: "uppercase",
-          fontWeight: "bold",
+          textTransform: 'uppercase',
+          fontWeight: 'bold',
         },
       },
       components: {
         Div: {
           baseStyle: {
-            textStyle: "caps",
-            bg: "red",
+            textStyle: 'caps',
+            bg: 'red',
           },
         },
       },

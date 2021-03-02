@@ -1,18 +1,12 @@
-import { AddIcon } from "@chakra-ui/icons";
-import * as React from "react";
-import {
-  Tag,
-  TagLeftIcon,
-  TagLabel,
-  TagRightIcon,
-  TagCloseButton,
-} from "@chakra-ui/react";
-import { chakra } from "@chakra-ui/system";
-import { Avatar } from "@chakra-ui/avatar";
-import { MdSettings } from "react-icons/md";
+import { AddIcon } from '@chakra-ui/icons';
+import * as React from 'react';
+import { Tag, TagLeftIcon, TagLabel, TagRightIcon, TagCloseButton } from '@chakra-ui/react';
+import { chakra } from '@chakra-ui/system';
+import { Avatar } from '@chakra-ui/avatar';
+import { MdSettings } from 'react-icons/md';
 
 export default {
-  title: "Chakra/Components/Tag",
+  title: 'Chakra/Components/Tag',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="600px" mx="auto" mt="40px">
@@ -108,13 +102,7 @@ export const withCloseButton = () => (
 
 export const withCustomElement = () => (
   <Tag size="lg" colorScheme="red" borderRadius="full">
-    <Avatar
-      src="https://bit.ly/sage-adebayo"
-      size="xs"
-      name="Segun Adebayo"
-      marginLeft={-1}
-      marginRight={2}
-    />
+    <Avatar src="https://bit.ly/sage-adebayo" size="xs" name="Segun Adebayo" marginLeft={-1} marginRight={2} />
     <TagLabel>Segun</TagLabel>
     <TagCloseButton />
   </Tag>

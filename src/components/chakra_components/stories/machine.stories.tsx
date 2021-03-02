@@ -1,14 +1,14 @@
 /* eslint-disable jsx-a11y/mouse-events-have-key-events */
-import * as React from "react";
-import { createMachine, useMachine } from "@chakra-ui/react";
+import * as React from 'react';
+import { createMachine, useMachine } from '@chakra-ui/react';
 
 export default {
-  title: "Machine",
+  title: 'Machine',
 };
 
 const counter = createMachine({
   context: { value: 0, min: 0, max: 100 },
-  initial: "idle",
+  initial: 'idle',
   states: {
     idle: {
       on: {
@@ -30,20 +30,20 @@ export const Counter = () => {
   return (
     <div>
       <pre>{JSON.stringify(state, null, 3)}</pre>
-      <button onClick={() => send("INC")}>INC</button>
-      <button onClick={() => send("DEC")}>DEC</button>
+      <button onClick={() => send('INC')}>INC</button>
+      <button onClick={() => send('DEC')}>DEC</button>
     </div>
   );
 };
 
-const checkbox = createMachine<{}, "checked" | "unchecked">({
-  initial: "unchecked",
+const checkbox = createMachine<{}, 'checked' | 'unchecked'>({
+  initial: 'unchecked',
   states: {
     checked: {
-      on: { CLICK: "unchecked" },
+      on: { CLICK: 'unchecked' },
     },
     unchecked: {
-      on: { CLICK: "checked" },
+      on: { CLICK: 'checked' },
     },
   },
 });
@@ -53,39 +53,39 @@ export const Checkbox = () => {
   return (
     <div>
       <pre>{JSON.stringify(state, null, 3)}</pre>
-      <button onClick={() => send("CLICK")}>CLICK</button>
+      <button onClick={() => send('CLICK')}>CLICK</button>
     </div>
   );
 };
 
-type PressableState = "hover" | "pressIn" | "idle" | "longPressIn" | "test";
+type PressableState = 'hover' | 'pressIn' | 'idle' | 'longPressIn' | 'test';
 
 const pressable = createMachine<{}, PressableState>({
-  initial: "idle",
+  initial: 'idle',
   states: {
     idle: {
       on: {
-        pointerover: "hover",
+        pointerover: 'hover',
       },
     },
     hover: {
       on: {
-        pointerleave: "idle",
-        pointerdown: "pressIn",
+        pointerleave: 'idle',
+        pointerdown: 'pressIn',
       },
     },
     pressIn: {
       after: {
-        500: "longPressIn",
+        500: 'longPressIn',
       },
       on: {
-        pointerup: "hover",
+        pointerup: 'hover',
       },
     },
     longPressIn: {
       on: {
-        pointerup: "hover",
-        pointerleave: "idle",
+        pointerup: 'hover',
+        pointerleave: 'idle',
       },
     },
   },
@@ -97,15 +97,13 @@ export const Pressable = () => {
     <div>
       <button
         style={{
-          color: "white",
-          background: state.matches(["pressIn", "longPressIn"])
-            ? "green"
-            : "blue",
+          color: 'white',
+          background: state.matches(['pressIn', 'longPressIn']) ? 'green' : 'blue',
         }}
-        onPointerOver={() => send("pointerover")}
-        onPointerLeave={() => send("pointerleave")}
-        onPointerDown={() => send("pointerdown")}
-        onPointerUp={() => send("pointerup")}
+        onPointerOver={() => send('pointerover')}
+        onPointerLeave={() => send('pointerleave')}
+        onPointerDown={() => send('pointerdown')}
+        onPointerUp={() => send('pointerup')}
       >
         Welcome
       </button>

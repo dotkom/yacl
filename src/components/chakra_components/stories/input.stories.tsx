@@ -1,14 +1,9 @@
-import {
-  FormControl,
-  FormErrorMessage,
-  FormHelperText,
-  FormLabel,
-} from "@chakra-ui/form-control";
-import { CheckIcon, PhoneIcon } from "@chakra-ui/icons";
-import { useDisclosure } from "@chakra-ui/hooks";
-import { Stack } from "@chakra-ui/layout";
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
+import { FormControl, FormErrorMessage, FormHelperText, FormLabel } from '@chakra-ui/form-control';
+import { CheckIcon, PhoneIcon } from '@chakra-ui/icons';
+import { useDisclosure } from '@chakra-ui/hooks';
+import { Stack } from '@chakra-ui/layout';
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
 import {
   Input,
   InputGroup,
@@ -16,10 +11,10 @@ import {
   InputLeftElement,
   InputRightAddon,
   InputRightElement,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/Input",
+  title: 'Chakra/Forms/Input',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="560px" mx="auto" mt="40px">
@@ -32,17 +27,12 @@ export default {
 export const Basic = () => <Input placeholder="Basic input" />;
 
 export const Controlled = () => {
-  const [value, setValue] = React.useState("Starting...");
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
-    setValue(event.target.value);
+  const [value, setValue] = React.useState('Starting...');
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value);
 
   return (
     <>
-      <Input
-        value={value}
-        onChange={handleChange}
-        placeholder="Controlled input"
-      />
+      <Input value={value} onChange={handleChange} placeholder="Controlled input" />
       <pre>{JSON.stringify(value, null, 2)}</pre>
     </>
   );
@@ -50,7 +40,7 @@ export const Controlled = () => {
 
 export const WithSizes = () => (
   <Stack align="start">
-    {["xs", "sm", "md", "lg"].map((size) => (
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
       <Input key={size} size={size} placeholder="This is an input component" />
     ))}
   </Stack>
@@ -110,15 +100,9 @@ export function PasswordInput() {
 
   return (
     <InputGroup size="md">
-      <Input
-        pr="4.5rem"
-        type={show ? "text" : "password"}
-        placeholder="Enter password"
-      />
+      <Input pr="4.5rem" type={show ? 'text' : 'password'} placeholder="Enter password" />
       <InputRightElement width="4.5rem">
-        <chakra.button onClick={handleClick}>
-          {show ? "Hide" : "Show"}
-        </chakra.button>
+        <chakra.button onClick={handleClick}>{show ? 'Hide' : 'Show'}</chakra.button>
       </InputRightElement>
     </InputGroup>
   );
@@ -128,37 +112,16 @@ export const WithFocusAndErrorColors = () => (
   <Stack align="start" spacing="10">
     <Input focusBorderColor="lime" placeholder="Here is a sample placeholder" />
 
-    <Input
-      focusBorderColor="pink.400"
-      placeholder="Here is a sample placeholder"
-    />
+    <Input focusBorderColor="pink.400" placeholder="Here is a sample placeholder" />
 
-    <Input
-      isInvalid
-      errorBorderColor="red.300"
-      placeholder="Here is a sample placeholder"
-    />
+    <Input isInvalid errorBorderColor="red.300" placeholder="Here is a sample placeholder" />
 
-    <Input
-      isInvalid
-      errorBorderColor="crimson"
-      placeholder="Here is a sample placeholder"
-    />
+    <Input isInvalid errorBorderColor="crimson" placeholder="Here is a sample placeholder" />
   </Stack>
 );
 
 function FormError(props: any) {
-  return (
-    <FormErrorMessage
-      mt="0"
-      bg="red.500"
-      color="white"
-      px="1"
-      lineHeight="1em"
-      borderRadius="sm"
-      {...props}
-    />
-  );
+  return <FormErrorMessage mt="0" bg="red.500" color="white" px="1" lineHeight="1em" borderRadius="sm" {...props} />;
 }
 
 export const WithFormControl = () => {

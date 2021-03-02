@@ -1,17 +1,11 @@
-import * as React from "react";
-import { Image } from "@chakra-ui/react";
+import * as React from 'react';
+import { Image } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Image",
+  title: 'Chakra/Components/Image',
 };
 
-export const Basic = () => (
-  <Image
-    width={["100px", "200px"]}
-    src="https://bit.ly/dan-abramov"
-    alt="welcome"
-  />
-);
+export const Basic = () => <Image width={['100px', '200px']} src="https://bit.ly/dan-abramov" alt="welcome" />;
 
 /**
  * Chakra has support for fallback images
@@ -21,10 +15,7 @@ export const Basic = () => (
  * NB: we recommend using a local image as fallback
  */
 export const FallbackSrcExample = () => (
-  <Image
-    src="https://bit.ly/dan-abramov"
-    fallbackSrc="https://via.placeholder.com/240"
-  />
+  <Image src="https://bit.ly/dan-abramov" fallbackSrc="https://via.placeholder.com/240" />
 );
 
 /**
@@ -32,10 +23,7 @@ export const FallbackSrcExample = () => (
  * in case you need to show something custom
  */
 export const FallbackElementExample = () => (
-  <Image
-    src="https://bit.ly/dan-abramov"
-    fallback={<div style={{ width: 240, height: 240, background: "red" }} />}
-  />
+  <Image src="https://bit.ly/dan-abramov" fallback={<div style={{ width: 240, height: 240, background: 'red' }} />} />
 );
 
 /**
@@ -65,18 +53,16 @@ export const withNativeWidth = () => (
     htmlWidth="300px"
     htmlHeight="300px"
     onLoad={() => {
-      console.log("loaded");
+      console.log('loaded');
     }}
   />
 );
 
 export const Bug = () => {
-  const [src, setSrc] = React.useState("");
+  const [src, setSrc] = React.useState('');
 
   const onClick = () => {
-    setSrc(
-      "https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
-    );
+    setSrc('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
   };
 
   return (

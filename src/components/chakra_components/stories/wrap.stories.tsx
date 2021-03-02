@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Badge, Wrap, WrapItem } from "@chakra-ui/react";
+import * as React from 'react';
+import { Badge, Wrap, WrapItem } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Layout/Wrap",
+  title: 'Chakra/Layout/Wrap',
 };
 
 export const basic = () => (
@@ -23,10 +23,7 @@ export const basic = () => (
 );
 const Placeholder = (props: any) => (
   <WrapItem>
-    <div
-      style={{ height: 48, width: props.width || 48, background: "red" }}
-      {...props}
-    />
+    <div style={{ height: 48, width: props.width || 48, background: 'red' }} {...props} />
   </WrapItem>
 );
 
@@ -47,7 +44,7 @@ export const placeholder = () => (
 );
 
 export const responsive = () => (
-  <Wrap spacing={["12px", "24px"]} justify={["center", "flex-start"]}>
+  <Wrap spacing={['12px', '24px']} justify={['center', 'flex-start']}>
     <Placeholder />
     <Placeholder />
     <Placeholder />

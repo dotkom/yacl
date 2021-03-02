@@ -1,10 +1,10 @@
-import { chakra } from "@chakra-ui/system";
-import { extendTheme, useTheme, ThemeProvider } from "@chakra-ui/react";
-import * as React from "react";
-import { Progress, ProgressLabel } from "@chakra-ui/react";
+import * as React from 'react';
+import { chakra } from '@chakra-ui/system';
+import { extendTheme, useTheme, ThemeProvider, ChakraTheme } from '@chakra-ui/react';
+import { Progress, ProgressLabel } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Linear Progress",
+  title: 'Chakra/Components/Linear Progress',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="500px" mt="40px" mx="auto">
@@ -18,9 +18,7 @@ export const basic = () => <Progress value={50} />;
 
 export const withColorScheme = () => <Progress colorScheme="pink" value={20} />;
 
-export const indeterminate = () => (
-  <Progress margin="20px" colorScheme="cyan" size="xs" isIndeterminate />
-);
+export const indeterminate = () => <Progress margin="20px" colorScheme="cyan" size="xs" isIndeterminate />;
 
 export const withLabel = () => (
   <Progress value={60}>
@@ -28,9 +26,7 @@ export const withLabel = () => (
   </Progress>
 );
 
-export const withStripe = () => (
-  <Progress colorScheme="green" hasStripe value={20} />
-);
+export const withStripe = () => <Progress colorScheme="green" hasStripe value={20} />;
 
 export const withSizes = () => (
   <div>
@@ -42,23 +38,19 @@ export const withSizes = () => (
   </div>
 );
 
-export const withAnimation = () => (
-  <Progress colorScheme="green" hasStripe isAnimated value={20} />
-);
+export const withAnimation = () => <Progress colorScheme="green" hasStripe isAnimated value={20} />;
 
-export const withCustomBorderRadius = () => (
-  <Progress value={20} borderRadius="4px" />
-);
+export const withCustomBorderRadius = () => <Progress value={20} borderRadius="4px" />;
 
 export const withThemeBorderRadiusOverride = () => {
-  const theme = useTheme();
+  const theme: ChakraTheme = useTheme();
   const extendedTheme = extendTheme(
     {
       components: {
         Progress: {
           baseStyle: {
             track: {
-              borderRadius: "md",
+              borderRadius: 'md',
             },
           },
         },

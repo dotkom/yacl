@@ -1,22 +1,10 @@
-import * as React from "react";
-import { chakra } from "@chakra-ui/system";
-import {
-  Stack,
-  Wrap,
-  SimpleGrid,
-  Container,
-  WrapItem,
-} from "@chakra-ui/layout";
-import {
-  useRadio,
-  Radio,
-  useRadioGroup,
-  RadioGroup,
-  UseRadioProps,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { chakra } from '@chakra-ui/system';
+import { Stack, Wrap, SimpleGrid, Container, WrapItem } from '@chakra-ui/layout';
+import { useRadio, Radio, useRadioGroup, RadioGroup, UseRadioProps } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/Radio",
+  title: 'Chakra/Forms/Radio',
   decorators: [(story: Function) => <Container mt="40px">{story()}</Container>],
 };
 
@@ -31,18 +19,12 @@ export const Readonly = () => (
 );
 
 export const WithSizes = () => {
-  const sizes = ["sm", "md", "lg"];
+  const sizes = ['sm', 'md', 'lg'];
 
   return (
     <>
       {sizes.map((size) => (
-        <Radio
-          key={size}
-          size={size}
-          name="sample"
-          ml="1rem"
-          colorScheme="green"
-        >
+        <Radio key={size} size={size} name="sample" ml="1rem" colorScheme="green">
           Option
         </Radio>
       ))}
@@ -103,11 +85,11 @@ export const GroupWithSimpleGrid = () => {
 };
 
 export const WithHook = () => {
-  const options = ["react", "vue", "svelte"];
+  const options = ['react', 'vue', 'svelte'];
 
   const { getRadioProps, getRootProps } = useRadioGroup({
-    name: "test",
-    defaultValue: "vue",
+    name: 'test',
+    defaultValue: 'vue',
     onChange: console.log,
   });
 
@@ -135,8 +117,8 @@ function RadioCard(props: UseRadioProps & { children?: React.ReactNode }) {
         {...getCheckboxProps()}
         display="inline-block"
         border="1px solid gray"
-        _checked={{ bg: "tomato", color: "white" }}
-        _focus={{ outline: "3px dotted red" }}
+        _checked={{ bg: 'tomato', color: 'white' }}
+        _focus={{ outline: '3px dotted red' }}
         px={5}
         py={3}
       >
@@ -147,11 +129,11 @@ function RadioCard(props: UseRadioProps & { children?: React.ReactNode }) {
 }
 
 export function CustomRadioCard() {
-  const options = ["react", "vue", "svelte"];
+  const options = ['react', 'vue', 'svelte'];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
-    name: "framework",
-    defaultValue: "vue",
+    name: 'framework',
+    defaultValue: 'vue',
     onChange: console.log,
   });
 

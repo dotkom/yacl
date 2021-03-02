@@ -1,18 +1,8 @@
-import * as React from "react";
-import {
-  Table,
-  TableCaption,
-  TableProps,
-  Tbody,
-  Td,
-  Tfoot,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { Table, TableCaption, TableProps, Tbody, Td, Tfoot, Th, Thead, Tr } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Table / Double Header",
+  title: 'Chakra/Table / Double Header',
 };
 
 const DoubleHeaderTable = (props: TableProps) => (
@@ -108,16 +98,8 @@ export const simpleSM = () => <DoubleHeaderTable size="sm" />;
 export const simpleMD = () => <DoubleHeaderTable size="md" />;
 export const simpleLG = () => <DoubleHeaderTable size="lg" />;
 
-export const stripedSM = () => (
-  <DoubleHeaderTable variant="striped" size="sm" />
-);
-export const stripedMD = () => (
-  <DoubleHeaderTable variant="striped" size="md" />
-);
-export const stripedLG = () => (
-  <DoubleHeaderTable variant="striped" size="lg" />
-);
+export const stripedSM = () => <DoubleHeaderTable variant="striped" size="sm" />;
+export const stripedMD = () => <DoubleHeaderTable variant="striped" size="md" />;
+export const stripedLG = () => <DoubleHeaderTable variant="striped" size="lg" />;
 
-export const unstyled = () => (
-  <DoubleHeaderTable variant="unstyled" size="none" />
-);
+export const unstyled = () => <DoubleHeaderTable variant="unstyled" size="none" />;

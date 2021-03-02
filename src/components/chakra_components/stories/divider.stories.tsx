@@ -1,8 +1,8 @@
-import React from "react";
-import { Container, Divider } from "@chakra-ui/react";
+import React from 'react';
+import { Container, Divider } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Divider",
+  title: 'Chakra/Components/Divider',
   decorators: [
     (Story: Function) => (
       <Container p={4} height="300px">
@@ -23,6 +23,4 @@ export const Vertical = () => <Divider orientation="vertical" />;
 
 export const Horizontal = () => <Divider orientation="horizontal" />;
 
-export const DashedVariant = () => (
-  <Divider orientation="horizontal" variant="dashed" />
-);
+export const DashedVariant = () => <Divider orientation="horizontal" variant="dashed" />;

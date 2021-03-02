@@ -1,11 +1,11 @@
-import * as React from "react";
-import { BrowserRouter, Link } from "react-router-dom";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { ChevronRightIcon } from "@chakra-ui/icons";
-import { extendTheme, useTheme, ThemeProvider } from "@chakra-ui/react";
+import * as React from 'react';
+import { BrowserRouter, Link } from 'react-router-dom';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { ChevronRightIcon } from '@chakra-ui/icons';
+import { extendTheme, useTheme, ThemeProvider } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Breadcrumb",
+  title: 'Chakra/Components/Breadcrumb',
 };
 
 export const Default = () => (
@@ -73,18 +73,18 @@ export const WithThemeOverrides = () => {
             },
             item: {
               borderWidth: 2,
-              borderRadius: "full",
-              textTransform: "uppercase",
+              borderRadius: 'full',
+              textTransform: 'uppercase',
             },
             link: {
-              color: "red.500",
-              "&[aria-current=page]": {
-                color: "blue.500",
+              color: 'red.500',
+              '&[aria-current=page]': {
+                color: 'blue.500',
               },
             },
             separator: {
               borderWidth: 4,
-              borderColor: "red.300",
+              borderColor: 'red.300',
             },
           },
         },
@@ -95,10 +95,7 @@ export const WithThemeOverrides = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Breadcrumb
-        spacing="8px"
-        separator={<ChevronRightIcon color="gray.300" />}
-      >
+      <Breadcrumb spacing="8px" separator={<ChevronRightIcon color="gray.300" />}>
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>

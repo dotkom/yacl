@@ -1,15 +1,10 @@
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import {
-  Alert,
-  AlertDescription,
-  AlertIcon,
-  AlertTitle,
-} from "@chakra-ui/react";
-import { Container } from "@chakra-ui/layout";
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { Alert, AlertDescription, AlertIcon, AlertTitle } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/layout';
 
 export default {
-  title: "Chakra/Components/Alert",
+  title: 'Chakra/Components/Alert',
   decorators: [(story: Function) => <Container mt={4}>{story()}</Container>],
 };
 
@@ -42,13 +37,7 @@ export const LeftAccent = () => (
 );
 
 export const TopAccent = () => (
-  <Alert
-    variant="top-accent"
-    mx="auto"
-    alignItems="flex-start"
-    pt="3"
-    rounded="md"
-  >
+  <Alert variant="top-accent" mx="auto" alignItems="flex-start" pt="3" rounded="md">
     <AlertIcon />
     <chakra.div flex="1">
       <AlertTitle display="block" mr="2">

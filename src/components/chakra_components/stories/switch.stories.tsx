@@ -1,11 +1,11 @@
-import { HStack } from "@chakra-ui/layout";
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import { useForm } from "react-hook-form";
-import { Switch } from "@chakra-ui/react";
+import { HStack } from '@chakra-ui/layout';
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { useForm } from 'react-hook-form';
+import { Switch } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/Switch",
+  title: 'Chakra/Forms/Switch',
   decorators: [
     (story: Function) => (
       <chakra.div maxWidth="lg" mx="auto" mt={6} p={6}>
@@ -17,17 +17,11 @@ export default {
 
 export const Base = () => <Switch colorScheme="green" />;
 
-export const Disabled = () => (
-  <Switch isDisabled size="md" colorScheme="blue" margin="20px" />
-);
+export const Disabled = () => <Switch isDisabled size="md" colorScheme="blue" margin="20px" />;
 
-export const Readonly = () => (
-  <Switch isReadOnly size="md" colorScheme="blue" margin="20px" />
-);
+export const Readonly = () => <Switch isReadOnly size="md" colorScheme="blue" margin="20px" />;
 
-export const Invalid = () => (
-  <Switch isInvalid size="md" colorScheme="blue" margin="20px" />
-);
+export const Invalid = () => <Switch isInvalid size="md" colorScheme="blue" margin="20px" />;
 
 export const Usage = () => (
   <chakra.div display="flex" justifyContent="center" alignItems="center">
@@ -53,19 +47,15 @@ export const Controlled = () => {
 
   return (
     <>
-      {checked ? "Checked" : "Unchecked"}
-      <Switch
-        isChecked={checked}
-        colorScheme="blue"
-        onChange={(e) => setChecked(e.target.checked)}
-      />
+      {checked ? 'Checked' : 'Unchecked'}
+      <Switch isChecked={checked} colorScheme="blue" onChange={(e) => setChecked(e.target.checked)} />
     </>
   );
 };
 
 export const WithReactHookForm = () => {
   const defaultValues = {
-    name: "Hello",
+    name: 'Hello',
     boolean: true,
     test: true,
   };

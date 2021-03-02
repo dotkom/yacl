@@ -1,17 +1,8 @@
-import * as React from "react";
-import {
-  Table,
-  TableCaption,
-  TableProps,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { Table, TableCaption, TableProps, Tbody, Td, Th, Thead, Tr } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Table / Simple",
+  title: 'Chakra/Table / Simple',
 };
 
 const SimpleTable = (props: TableProps) => (

@@ -1,9 +1,9 @@
-import * as React from "react";
-import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
-import { chakra } from "@chakra-ui/system";
+import * as React from 'react';
+import { CircularProgress, CircularProgressLabel } from '@chakra-ui/react';
+import { chakra } from '@chakra-ui/system';
 
 export default {
-  title: "Chakra/Components/Circular Progress",
+  title: 'Chakra/Components/Circular Progress',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="500px" mt="40px" mx="auto">
@@ -13,15 +13,11 @@ export default {
   ],
 };
 
-export const basic = () => (
-  <CircularProgress trackColor="gray.200" size="120px" value={20} />
-);
+export const basic = () => <CircularProgress trackColor="gray.200" size="120px" value={20} />;
 
 export const withSize = () => <CircularProgress size="120px" value={60} />;
 
-export const withThickness = () => (
-  <CircularProgress size="120px" value={60} thickness="3px" />
-);
+export const withThickness = () => <CircularProgress size="120px" value={60} thickness="3px" />;
 
 export const withLabel = () => (
   <CircularProgress size="120px" value={60}>
@@ -30,11 +26,5 @@ export const withLabel = () => (
 );
 
 export const circularIndeterminate = () => (
-  <CircularProgress
-    capIsRound
-    trackColor="transparent"
-    size="50px"
-    isIndeterminate
-    value={3}
-  />
+  <CircularProgress capIsRound trackColor="transparent" size="50px" isIndeterminate value={3} />
 );

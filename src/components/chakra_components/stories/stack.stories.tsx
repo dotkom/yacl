@@ -1,15 +1,8 @@
-import * as React from "react";
-import {
-  Stack,
-  StackDivider,
-  Box,
-  Heading,
-  Text,
-  Divider,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { Stack, StackDivider, Box, Heading, Text, Divider } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Layout/Stack",
+  title: 'Chakra/Layout/Stack',
 };
 
 export const Vertical = () => (
@@ -28,7 +21,7 @@ export const WithCustomDivider = () => (
       <Box>3</Box>
     </Stack>
 
-    <Stack spacing="40px" divider={<Divider sx={{ borderColor: "red.200" }} />}>
+    <Stack spacing="40px" divider={<Divider sx={{ borderColor: 'red.200' }} />}>
       <Box>1</Box>
       <Box>2</Box>
       <Box>3</Box>
@@ -45,7 +38,7 @@ export const Inline = () => (
 );
 
 export const Responsive = () => (
-  <Stack direction={["column", "row"]} spacing="40px" w="100%">
+  <Stack direction={['column', 'row']} spacing="40px" w="100%">
     <Box boxSize="40px" bg="yellow.200">
       1
     </Box>
@@ -61,19 +54,17 @@ export const Responsive = () => (
 export const WithResponsiveDivider = () => (
   <Stack
     mt={10}
-    direction={["column", "row"]}
-    divider={
-      <StackDivider borderColor={{ base: "green.500", md: "red.200" }} />
-    }
+    direction={['column', 'row']}
+    divider={<StackDivider borderColor={{ base: 'green.500', md: 'red.200' }} />}
     spacing={4}
   >
-    <Box flex="1" w={["100%", "40px"]} h="40px" bg="yellow.200">
+    <Box flex="1" w={['100%', '40px']} h="40px" bg="yellow.200">
       1
     </Box>
-    <Box flex="1" w={["100%", "40px"]} h="40px" bg="tomato">
+    <Box flex="1" w={['100%', '40px']} h="40px" bg="tomato">
       2
     </Box>
-    <Box flex="1" w={["100%", "40px"]} h="40px" bg="pink.100">
+    <Box flex="1" w={['100%', '40px']} h="40px" bg="pink.100">
       3
     </Box>
   </Stack>
@@ -109,14 +100,7 @@ export const WithDivider = () => (
 
 function Feature({ title, children, ...rest }: any) {
   return (
-    <Box
-      padding={5}
-      boxShadow="md"
-      borderWidth="1px"
-      flex="1"
-      borderRadius="md"
-      {...rest}
-    >
+    <Box padding={5} boxShadow="md" borderWidth="1px" flex="1" borderRadius="md" {...rest}>
       <Heading size="md">{title}</Heading>
       <Text mt={2}>{children}</Text>
     </Box>
@@ -125,10 +109,7 @@ function Feature({ title, children, ...rest }: any) {
 
 export const WithContent = () => (
   <Stack direction="row" spacing={8}>
-    <Feature
-      title="Plan Money"
-      children="The future can be even brighter but a goal without a plan is just a wish"
-    />
+    <Feature title="Plan Money" children="The future can be even brighter but a goal without a plan is just a wish" />
     <Feature
       title="Save Money"
       children="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings."
@@ -145,11 +126,7 @@ export const WrappingChildren = () => (
 );
 
 export const WithResponsiveSpacingAndDirection = () => (
-  <Stack
-    spacing={["10px", "60px"]}
-    divider={<StackDivider borderColor="gray.200" />}
-    direction={["column", "row"]}
-  >
+  <Stack spacing={['10px', '60px']} divider={<StackDivider borderColor="gray.200" />} direction={['column', 'row']}>
     <Box bgColor="red.500">First</Box>
     <Box bgColor="blue.500">Second</Box>
     <Box bgColor="yellow.500">Third</Box>
@@ -158,8 +135,8 @@ export const WithResponsiveSpacingAndDirection = () => (
 
 export const WithCustomBorderColor = () => (
   <Stack
-    direction={{ base: "column", md: "row" }}
-    divider={<StackDivider borderColor={{ base: "gray.200", md: "red.300" }} />}
+    direction={{ base: 'column', md: 'row' }}
+    divider={<StackDivider borderColor={{ base: 'gray.200', md: 'red.300' }} />}
     spacing={4}
   >
     <Box w="40px" flexShrink={0} h="40px" bg="yellow.200">

@@ -1,19 +1,13 @@
-import {
-  ArrowForwardIcon,
-  ChevronDownIcon,
-  EmailIcon,
-  PhoneIcon,
-  SearchIcon,
-} from "@chakra-ui/icons";
-import { Container, Stack, HStack } from "@chakra-ui/layout";
-import * as React from "react";
-import { MdBuild, MdCall } from "react-icons/md";
-import { FaFacebook, FaTwitter } from "react-icons/fa";
-import { BeatLoader } from "react-spinners";
-import { Button, ButtonGroup, IconButton } from "@chakra-ui/react";
+import { ArrowForwardIcon, ChevronDownIcon, EmailIcon, PhoneIcon, SearchIcon } from '@chakra-ui/icons';
+import { Container, Stack, HStack } from '@chakra-ui/layout';
+import * as React from 'react';
+import { MdBuild, MdCall } from 'react-icons/md';
+import { FaFacebook, FaTwitter } from 'react-icons/fa';
+import { BeatLoader } from 'react-spinners';
+import { Button, ButtonGroup, IconButton } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Button",
+  title: 'Chakra/Components/Button',
   decorators: [
     (Story: any) => (
       <Container mt="40px">
@@ -109,11 +103,7 @@ export const WithIcon = () => (
     <Button leftIcon={<EmailIcon />} colorScheme="teal" variant="solid">
       Email
     </Button>
-    <Button
-      rightIcon={<ArrowForwardIcon />}
-      colorScheme="teal"
-      variant="outline"
-    >
+    <Button rightIcon={<ArrowForwardIcon />} colorScheme="teal" variant="outline">
       Call us
     </Button>
   </Stack>
@@ -136,20 +126,11 @@ export const WithLoading = () => (
       Email
     </Button>
 
-    <Button
-      isLoading
-      colorScheme="blue"
-      spinner={<BeatLoader size={8} color="white" />}
-    >
+    <Button isLoading colorScheme="blue" spinner={<BeatLoader size={8} color="white" />}>
       Click me
     </Button>
 
-    <Button
-      isLoading
-      loadingText="Submitting..."
-      colorScheme="teal"
-      variant="outline"
-    >
+    <Button isLoading loadingText="Submitting..." colorScheme="teal" variant="outline">
       Submit
     </Button>
   </Stack>
@@ -173,13 +154,7 @@ export const withDisabled = () => (
 );
 
 export const customComposition = () => (
-  <Button
-    size="md"
-    height="48px"
-    width="200px"
-    border="2px solid"
-    borderColor="green.500"
-  >
+  <Button size="md" height="48px" width="200px" border="2px solid" borderColor="green.500">
     Button
   </Button>
 );
@@ -188,11 +163,7 @@ export const iconButton = () => (
   <Stack direction="row">
     <IconButton aria-label="Search database" icon={<SearchIcon />} />
 
-    <IconButton
-      colorScheme="blue"
-      aria-label="Search database"
-      icon={<SearchIcon />}
-    />
+    <IconButton colorScheme="blue" aria-label="Search database" icon={<SearchIcon />} />
 
     <IconButton colorScheme="teal" aria-label="Call Segun" size="lg">
       <PhoneIcon />
@@ -210,11 +181,7 @@ export const WithButtonGroup = () => (
 export const attachedButtons = () => (
   <ButtonGroup size="sm" isAttached variant="outline">
     <Button mr="-px">Save</Button>
-    <IconButton
-      fontSize="2xl"
-      aria-label="Add to friends"
-      icon={<ChevronDownIcon />}
-    />
+    <IconButton fontSize="2xl" aria-label="Add to friends" icon={<ChevronDownIcon />} />
   </ButtonGroup>
 );
 

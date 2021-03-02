@@ -1,11 +1,11 @@
-import * as React from "react";
-import { Button, ButtonGroup } from "@chakra-ui/button";
-import { chakra, useColorMode } from "@chakra-ui/system";
-import { Alert } from "@chakra-ui/alert";
-import { useToast } from "@chakra-ui/react";
+import * as React from 'react';
+import { Button, ButtonGroup } from '@chakra-ui/button';
+import { chakra, useColorMode } from '@chakra-ui/system';
+import { Alert } from '@chakra-ui/alert';
+import { useToast } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/Toast",
+  title: 'Chakra/Components/Toast',
   decorators: [
     (Story: Function) => (
       <>
@@ -17,7 +17,7 @@ export default {
 
 export function ToastExample() {
   const toast = useToast();
-  const id = "login-error-toast";
+  const id = 'login-error-toast';
   return (
     <ButtonGroup>
       <Button
@@ -25,13 +25,13 @@ export function ToastExample() {
           if (toast.isActive(id)) return;
           toast({
             id,
-            title: "Error Connecting...",
-            description: "You do not have permissions to perform this action.",
-            status: "error",
+            title: 'Error Connecting...',
+            description: 'You do not have permissions to perform this action.',
+            status: 'error',
             duration: null,
             isClosable: true,
             onCloseComplete: () => {
-              console.log("hello");
+              console.log('hello');
             },
           });
         }}
@@ -42,9 +42,9 @@ export function ToastExample() {
       <Button
         onClick={() =>
           toast.update(id, {
-            title: "Hooray 🥳🥳🥳!!!",
-            description: "You now have permissions to perform this action.",
-            status: "success",
+            title: 'Hooray 🥳🥳🥳!!!',
+            description: 'You now have permissions to perform this action.',
+            status: 'success',
             duration: 3000,
           })
         }
@@ -64,7 +64,7 @@ export function CustomRender() {
         onClick={() =>
           toast({
             duration: null,
-            position: "top-right",
+            position: 'top-right',
             render: () => (
               <chakra.div rounded="md" color="white" p={3} bg="blue.500">
                 Hello World
@@ -79,9 +79,9 @@ export function CustomRender() {
         colorScheme="pink"
         onClick={() =>
           toast({
-            position: "bottom-right",
-            title: "Testing",
-            description: "This toast is working well",
+            position: 'bottom-right',
+            title: 'Testing',
+            description: 'This toast is working well',
           })
         }
       >
@@ -97,14 +97,14 @@ export function SuccessToast() {
     <Button
       onClick={() =>
         toast({
-          position: "bottom",
-          title: "Account created.",
+          position: 'bottom',
+          title: 'Account created.',
           description: "We've created your account for you.",
-          status: "success",
+          status: 'success',
           duration: 3000,
           isClosable: true,
           onCloseComplete: () => {
-            console.log("close");
+            console.log('close');
           },
         })
       }
@@ -120,9 +120,9 @@ export function WarningToast() {
     <Button
       onClick={() =>
         toast({
-          title: "Warning.",
-          description: "This is a warning.",
-          status: "warning",
+          title: 'Warning.',
+          description: 'This is a warning.',
+          status: 'warning',
           duration: 9000,
           isClosable: true,
         })
@@ -139,9 +139,9 @@ export function ErrorToast() {
     <Button
       onClick={() =>
         toast({
-          title: "An error occurred.",
-          description: "Unable to create user account.",
-          status: "error",
+          title: 'An error occurred.',
+          description: 'Unable to create user account.',
+          status: 'error',
           duration: 9000,
           isClosable: true,
         })
@@ -155,14 +155,7 @@ export function ErrorToast() {
 export const AllSides = () => {
   const toast = useToast();
 
-  const positions = [
-    "top-left",
-    "top",
-    "top-right",
-    "bottom-left",
-    "bottom",
-    "bottom-right",
-  ] as const;
+  const positions = ['top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right'] as const;
 
   return (
     <>
@@ -207,14 +200,7 @@ export const ColorModeBug = () => {
 export const CloseAllTopLeftToasts = () => {
   const toast = useToast();
 
-  const positions = [
-    "top-left",
-    "top",
-    "top-right",
-    "bottom-left",
-    "bottom",
-    "bottom-right",
-  ] as const;
+  const positions = ['top-left', 'top', 'top-right', 'bottom-left', 'bottom', 'bottom-right'] as const;
 
   return (
     <>
@@ -229,17 +215,15 @@ export const CloseAllTopLeftToasts = () => {
       </Button>
 
       <hr />
-      <Button onClick={() => toast.closeAll({ positions: ["top-left"] })}>
-        close all top-left
-      </Button>
+      <Button onClick={() => toast.closeAll({ positions: ['top-left'] })}>close all top-left</Button>
     </>
   );
 };
 
 export const UseToastWithDefaults = () => {
   const toast = useToast({
-    position: "top-right",
-    title: "asdf",
+    position: 'top-right',
+    title: 'asdf',
   });
 
   return <Button onClick={() => toast()}>toast</Button>;

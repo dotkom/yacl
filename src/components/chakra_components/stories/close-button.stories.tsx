@@ -1,8 +1,8 @@
-import * as React from "react";
-import { CloseButton } from "@chakra-ui/react";
+import * as React from 'react';
+import { CloseButton } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Components/CloseButton",
+  title: 'Chakra/Components/CloseButton',
 };
 
 /**

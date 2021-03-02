@@ -1,21 +1,15 @@
-import * as React from "react";
-import {
-  PinInput,
-  PinInputField,
-  usePinInput,
-  usePinInputField,
-  PinInputProvider,
-} from "@chakra-ui/react";
+import * as React from 'react';
+import { PinInput, PinInputField, usePinInput, usePinInputField, PinInputProvider } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/PinInput",
+  title: 'Chakra/Forms/PinInput',
 };
 
 const style: React.CSSProperties = {
   width: 40,
   height: 40,
-  textAlign: "center",
-  color: "black",
+  textAlign: 'center',
+  color: 'black',
   margin: 4,
 };
 
@@ -29,7 +23,7 @@ export function HookExample() {
     autoFocus: true,
     mask: true,
     onComplete: alert,
-    type: "number",
+    type: 'number',
   });
   return (
     <PinInputProvider value={context}>
@@ -53,8 +47,8 @@ export function ComponentExample() {
 
 export const Sizes = () => (
   <>
-    {["xs", "sm", "md", "lg"].map((size) => (
-      <div key={size} style={{ marginBottom: "1rem" }}>
+    {['xs', 'sm', 'md', 'lg'].map((size) => (
+      <div key={size} style={{ marginBottom: '1rem' }}>
         <PinInput size={size} defaultValue="234">
           <PinInputField />
           <PinInputField />
@@ -66,7 +60,7 @@ export const Sizes = () => (
 );
 
 export const Controlled = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
 
   const handleChange = (value: string) => {
     setValue(value);

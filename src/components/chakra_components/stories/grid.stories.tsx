@@ -1,8 +1,8 @@
-import * as React from "react";
-import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
+import * as React from 'react';
+import { Box, GridItem, SimpleGrid } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Layout/SimpleGrid",
+  title: 'Chakra/Layout/SimpleGrid',
 };
 
 export const WithColumns = () => (
@@ -26,10 +26,7 @@ export const WithAutofit = () => (
 );
 
 export const WithColSpan = () => (
-  <SimpleGrid
-    columns={{ base: 2, md: 4 }}
-    spacing={{ base: "24px", md: "40px" }}
-  >
+  <SimpleGrid columns={{ base: 2, md: 4 }} spacing={{ base: '24px', md: '40px' }}>
     <GridItem bg="green.500" colSpan={{ base: 1, md: 3 }}>
       Column 1
     </GridItem>

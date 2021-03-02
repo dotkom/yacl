@@ -1,9 +1,9 @@
-import { chakra } from "@chakra-ui/system";
-import * as React from "react";
-import { Textarea } from "@chakra-ui/react";
+import { chakra } from '@chakra-ui/system';
+import * as React from 'react';
+import { Textarea } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Forms/Textarea",
+  title: 'Chakra/Forms/Textarea',
   decorators: [
     (story: Function) => (
       <chakra.div maxW="500px" mt="40px" mx="auto">
@@ -15,44 +15,23 @@ export default {
 
 export const basic = () => <Textarea defaultValue="This is a textarea" />;
 
-export const rows = () => (
-  <Textarea defaultValue="This is a textarea" rows={12} />
-);
+export const rows = () => <Textarea defaultValue="This is a textarea" rows={12} />;
 
-export const disabled = () => (
-  <Textarea isDisabled placeholder="A disabled textarea" />
-);
+export const disabled = () => <Textarea isDisabled placeholder="A disabled textarea" />;
 
-export const invalid = () => (
-  <Textarea isInvalid placeholder="An invalid textarea" />
-);
+export const invalid = () => <Textarea isInvalid placeholder="An invalid textarea" />;
 
 export const withSizes = () => (
   <>
-    <Textarea
-      size="xs"
-      placeholder="A sample placeholder"
-      defaultValue="This is a x-small textarea"
-    />
-    <Textarea
-      size="sm"
-      placeholder="A sample placeholder"
-      defaultValue="This is a small textarea"
-    />
-    <Textarea
-      placeholder="A sample placeholder"
-      defaultValue="This is a default textarea"
-    />
-    <Textarea
-      size="lg"
-      placeholder="A sample placeholder"
-      defaultValue="This is a large textarea"
-    />
+    <Textarea size="xs" placeholder="A sample placeholder" defaultValue="This is a x-small textarea" />
+    <Textarea size="sm" placeholder="A sample placeholder" defaultValue="This is a small textarea" />
+    <Textarea placeholder="A sample placeholder" defaultValue="This is a default textarea" />
+    <Textarea size="lg" placeholder="A sample placeholder" defaultValue="This is a large textarea" />
   </>
 );
 
 export const Controlled = () => {
-  const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState('');
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setValue(e.target.value);
@@ -61,16 +40,9 @@ export const Controlled = () => {
   return (
     <>
       <p>Value: {value}</p>
-      <Textarea
-        mt="8px"
-        value={value}
-        placeholder="Enter value"
-        onChange={onChange}
-      />
+      <Textarea mt="8px" value={value} placeholder="Enter value" onChange={onChange} />
     </>
   );
 };
 
-export const withResize = () => (
-  <Textarea placeholder="Here is a sample placeholder" resize="horizontal" />
-);
+export const withResize = () => <Textarea placeholder="Here is a sample placeholder" resize="horizontal" />;

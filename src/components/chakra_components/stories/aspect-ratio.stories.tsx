@@ -1,8 +1,8 @@
-import * as React from "react";
-import { AspectRatio, Box } from "@chakra-ui/react";
+import * as React from 'react';
+import { AspectRatio, Box } from '@chakra-ui/react';
 
 export default {
-  title: "Chakra/Layout/AspectRatio",
+  title: 'Chakra/Layout/AspectRatio',
 };
 
 /**
@@ -11,11 +11,7 @@ export default {
  */
 export const WithVideo = () => (
   <AspectRatio maxWidth="300px" ratio={1}>
-    <iframe
-      title="test"
-      src="https://www.youtube.com/embed/QhBnZ6NPOY0"
-      allowFullScreen
-    />
+    <iframe title="test" src="https://www.youtube.com/embed/QhBnZ6NPOY0" allowFullScreen />
   </AspectRatio>
 );
 
@@ -25,10 +21,7 @@ export const WithVideo = () => (
  */
 export const WithImage = () => (
   <AspectRatio maxWidth="400px" ratio={4 / 3}>
-    <img
-      src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png"
-      alt="minions"
-    />
+    <img src="https://upload.wikimedia.org/wikipedia/en/7/7d/Minions_characters.png" alt="minions" />
   </AspectRatio>
 );
 
@@ -50,16 +43,13 @@ export const WithMap = () => (
  * sized to the desired ratio.
  */
 export const WithResponsive = () => (
-  <AspectRatio
-    maxWidth="300px"
-    ratio={{ base: 1, sm: 4 / 3, md: 16 / 9, lg: 21 / 9 }}
-  >
+  <AspectRatio maxWidth="300px" ratio={{ base: 1, sm: 4 / 3, md: 16 / 9, lg: 21 / 9 }}>
     <Box
       backgroundColor={{
-        base: "red.500",
-        sm: "red.400",
-        md: "red.300",
-        lg: "red.200",
+        base: 'red.500',
+        sm: 'red.400',
+        md: 'red.300',
+        lg: 'red.200',
       }}
     >
       Box
