@@ -1,2 +1,1 @@
-export * from "components/button";
-export { default as Checkbox } from "components/checkbox/Checkbox";
+export * from "components/chakra_components/";
