@@ -42,4 +42,4 @@ export * from '@chakra-ui/transition';
 export * from '@chakra-ui/visually-hidden';
 export type { GridProps, ListProps } from '@chakra-ui/layout';
 
-export { YaclTheme, ThemeProvider, ThemeProviderProps } from './system/theme';
+export { OnlineTheme, ThemeProvider, ThemeProviderProps } from './system/theme';
