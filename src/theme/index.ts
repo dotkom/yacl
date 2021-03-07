@@ -5,11 +5,15 @@ const theme = extendTheme({
   fonts: {
     body: 'inter',
   },
-  /* shadows: {
-    outline: "0 7px 14px rgba(50,50,93,.15),0 3px 6px rgba(0,0,0,.08)",
-  }, */
   components: {
     Button: ButtonStyle,
+  },
+  styles: {
+    global: () => ({
+      ':focus:not(:focus-visible):not([role="dialog"]):not([role="menu"])': {
+        boxShadow: 'none !important',
+      },
+    }),
   },
   colors: {
     orange: {
