@@ -23,6 +23,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - name: Install dependencies
-        run: npm
+        run: npm install
       - name: Check linting
         run: npm lint
