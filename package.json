@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "types": "build/index.d.ts",
   "description": "Some dumb React library with Rollup and Typescript",
