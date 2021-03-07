@@ -14,6 +14,7 @@ export * from '@chakra-ui/hooks';
 export * from '@chakra-ui/icon';
 export * from '@chakra-ui/image';
 export * from '@chakra-ui/input';
+export * from '@chakra-ui/layout';
 export * from '@chakra-ui/switch';
 export * from '@chakra-ui/media-query';
 export * from '@chakra-ui/table';
@@ -39,6 +40,6 @@ export * from '@chakra-ui/toast';
 export * from '@chakra-ui/tooltip';
 export * from '@chakra-ui/transition';
 export * from '@chakra-ui/visually-hidden';
-export * from '@chakra-ui/layout';
+export type { GridProps, ListProps } from '@chakra-ui/layout';
 
-export { ThemeProvider, OnlineTheme, ThemeProviderProps } from './system/theme';
+export { OnlineTheme, ThemeProvider, ThemeProviderProps } from './system/theme';
