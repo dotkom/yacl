@@ -43,4 +43,4 @@ const theme = extendTheme({
   },
 });
 
-export { theme as OnlineTheme };
+export { theme as YaclTheme };
