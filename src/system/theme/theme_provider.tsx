@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import { ChakraProvider as BaseThemeProvider, ChakraProviderProps as BaseThemeProviderProps } from '@chakra-ui/react';
+import { ChakraProvider, ChakraProviderProps } from '@chakra-ui/react';
 import { Fonts } from './fonts';
 import { OnlineTheme } from './theme';
 
-export { BaseThemeProviderProps as ThemeProviderProps };
+export { ChakraProviderProps as ThemeProviderProps };
 
-export const ThemeProvider: FC<BaseThemeProviderProps> = ({ children, ...props }) => (
+export const ThemeProvider: FC<ChakraProviderProps> = ({ children, ...props }) => (
   // If no theme is not specified, set it to OnlineTheme.
-  <BaseThemeProvider theme={props.theme ?? OnlineTheme} {...props}>
+  <ChakraProvider theme={props.theme ?? OnlineTheme} {...props}>
     <Fonts />
     {children}
-  </BaseThemeProvider>
+  </ChakraProvider>
 );
