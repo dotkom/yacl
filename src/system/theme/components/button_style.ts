@@ -10,6 +10,9 @@ const ButtonStyle: ComponentStyleConfig = {
       transform: 'translateY(2px)',
     },
   },
+  defaultProps: {
+    colorScheme: 'blue',
+  },
 };
 
 export default ButtonStyle;
