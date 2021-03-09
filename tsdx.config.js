@@ -2,7 +2,7 @@ const postcss = require('rollup-plugin-postcss');
 
 module.exports = {
   rollup(config, options) {
-    config.input = './src/index.ts';
+    config.output.esModule = true;
     config.plugins.push(
       postcss({
         modules: true,
