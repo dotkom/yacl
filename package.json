@@ -5,14 +5,13 @@
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
-  "module": "dist/yacl.esm.js",
+  "module": "dist/index.esm.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "description": "Some dumb React library with Rollup and Typescript",
   "scripts": {
-    "build": "tsdx build",
+    "build": "rollup -c",
     "lint": "tsdx lint",
     "storybook": "start-storybook -p 6006",
     "start": "npm run storybook",
@@ -76,7 +75,11 @@
     "react-spinners": "^0.10.6",
     "react-table": "^7.6.3",
     "rollup": "^2.38.5",
-    "rollup-plugin-postcss": "^4.0.0",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^3.1.2",
+    "rollup-plugin-typescript2": "^0.29.0",
     "storybook-addon-react-docgen": "^1.2.42",
     "tsdx": "^0.14.1",
     "tslib": "^2.1.0",
