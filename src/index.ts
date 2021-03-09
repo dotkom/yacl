@@ -1,4 +1,4 @@
-export * from './system/theme';
+export { OnlineTheme, ThemeProvider, ThemeProviderProps } from './system/theme';
 
 export * from '@chakra-ui/accordion';
 export * from '@chakra-ui/alert';
