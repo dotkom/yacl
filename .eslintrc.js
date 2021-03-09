@@ -1,10 +1,8 @@
 module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint'],
   extends: ['react-app', 'prettier', 'plugin:@typescript-eslint/recommended'],
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
     // e.g. "@typescript-eslint/explicit-function-return-type": "off",
