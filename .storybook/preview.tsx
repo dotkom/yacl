@@ -3,7 +3,7 @@ import { addParameters, StoryContext } from '@storybook/react';
 import React from 'react';
 import { FaMoon, FaSun } from 'react-icons/fa';
 import { OnlineTheme } from '../src/system/theme';
-import Fonts from '../src/common/fonts';
+import { Fonts } from '../src/system/theme/fonts';
 
 const ColorModeToggleBar = () => {
   const { toggleColorMode } = useColorMode();
@@ -29,8 +29,8 @@ const ColorModeToggleBar = () => {
 const withChakra = (StoryFn: Function, context: StoryContext) => {
   return (
     <>
-      <Fonts />
       <ChakraProvider theme={OnlineTheme}>
+        <Fonts />
         <ColorModeToggleBar />
         <StoryFn />
       </ChakraProvider>
