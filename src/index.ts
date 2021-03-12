@@ -44,3 +44,4 @@ export * from '@chakra-ui/transition';
 export * from '@chakra-ui/visually-hidden';
 
 export { OnlineTheme, ThemeProviderProps, ThemeProvider, extendTheme } from './system/theme';
+export * from './components/logo/';

@@ -1,0 +1,53 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+import { Logo } from './Logo';
+import CompactLogo from './CompactLogo';
+import ModernLogo from './ModernLogo';
+import StaticSpinnerLogo from './StaticSpinnerLogo';
+
+<Meta title="Logo" component={Logo} />
+
+# Logo
+
+The logo of Online, linjeforeningen for informatikk ved NTNU Trondheim.
+This is the official logo, meant to be used in its full form.
+For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/online/info/innsikt-og-interface/grafisk-profil/).
+
+<Preview>
+  <Story name="Logo">
+    <Logo />
+  </Story>
+</Preview>
+
+<Props of={Logo} />
+
+# Compact Logo
+
+This is the compact version of the logo, showing only the O with the lightning.
+This can be used in places where the larger logo cannot fit, as a favicon, or application logo.
+For rules regarding usage, see our [brand identity](https://online.ntnu.no/wiki/online/info/innsikt-og-interface/grafisk-profil/).
+
+<Preview>
+  <Story name="Compact Logo">
+    <CompactLogo width="150px" />
+  </Story>
+</Preview>
+
+# Modern Logo
+
+**NOT APPROVED FOR OFFICIAL USE**
+
+<Preview>
+  <Story name="Modern Logo">
+    <ModernLogo width="150px" />
+  </Story>
+</Preview>
+
+# Futuristic Logo (Static Spinner)
+
+**NOT APPROVED FOR OFFICIAL USE**
+
+<Preview>
+  <Story name="Static Spinner Logo">
+    <StaticSpinnerLogo width="150px" />
+  </Story>
+</Preview>
