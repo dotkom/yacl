@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "description": "Some dumb React library with Rollup and Typescript",
+  "description": "A component library which is built ontop of chakra ui",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint 'src/**/*.{js, jsx,ts,tsx}'",
